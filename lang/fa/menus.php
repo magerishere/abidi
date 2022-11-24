@@ -13,6 +13,10 @@ return [
                 'title' => str_merge([__('crud.create'),__('back.topic')]),
                 'href' => route('admin.topics.create'),
             ],
+            [
+                'title' => str_merge([__('crud.trash'),__('back.topic')]),
+                'href' => route('admin.topics.trash.index'),
+            ],
         ]
     ],
 ];

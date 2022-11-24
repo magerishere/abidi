@@ -9,5 +9,12 @@ Route::get('/', function () {
     return view('back.dashboard');
 });
 
-Route::resource('topics',TopicsController::class);
-Route::patch('topics/{topic}/updateStatus',[TopicsController::class,'updateStatus'])->name('topics.update.status');
+Route::resource('topics',TopicsController::class)->except(['show']);
+Route::prefix('topics')->as('topics.')->group(function() {
+
+    Route::patch('/{topic}/updateStatus',[TopicsController::class,'updateStatus'])->name('update.status');
+    Route::get('trash',[TopicsController::class,'trashIndex'])->name('trash.index');
+    Route::patch('/{topic}/restore',[TopicsController::class,'trashRestore'])->name('trash.restore');
+
+});
+

@@ -9,6 +9,7 @@
                     @endif
                 <div class="clearfix"></div>
             </div>
+            @include('back.layouts.partials._messages')
             <div class="x_content">
                 <br/>
                 {{$slot}}

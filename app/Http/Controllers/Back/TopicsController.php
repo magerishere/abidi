@@ -40,20 +40,12 @@ class TopicsController extends BackController
     public function store(TopicStoreRequest $request)
     {
         $request['status'] = TopicStatusEnums::ACCEPTED;
-        $this->base_create(Topic::class,$request->all());
-        return $this->base_redirect_back();
+        $topic = $this->base_create(Topic::class,$request->all());
+        return $this->base_redirect_back([
+            'session_message' => __('messages.success_create',['title' => $topic->title])
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -77,7 +69,21 @@ class TopicsController extends BackController
     {
         $this->base_update($topic,$request->all());
 
-        return $this->base_redirect_back();
+        return $this->base_redirect_back([
+            'session_message' => __('messages.success_update',['title' => $topic->title])
+        ]);
+    }
+
+    public function updateStatus(Request $request,Topic $topic)
+    {
+        $topic = $this->base_update_status($topic,$request->get('status'));
+        $session_message = __('messages.success_accepted',['title' => $topic->title]);
+        if($topic->status->value == TopicStatusEnums::REJECTED) {
+            $session_message = __('messages.success_rejected', ['title' => $topic->title]);
+        }
+        return $this->base_redirect_back([
+            'session_message' => $session_message
+        ]);
     }
 
     /**
@@ -89,12 +95,23 @@ class TopicsController extends BackController
     public function destroy(Topic $topic)
     {
         $this->base_destroy($topic);
-        return $this->base_redirect_back();
+        return $this->base_redirect_back([
+            'session_message' => __('messages.success_destroy',['title' => $topic->title])
+        ]);
     }
 
-    public function updateStatus(Request $request,Topic $topic)
+    public function trashIndex()
     {
-        $this->base_update_status($topic,$request->get('status'));
-        return $this->base_redirect_back();
+        $topics = $this->base_trash_all_order_by_desc(Topic::class);
+        return view('back.topics.trash_index',compact('topics'));
+    }
+
+    public function trashRestore($id)
+    {
+        $topic = $this->base_trash_find_by_id(Topic::class, $id);
+        $this->base_trash_restore($topic);
+        return $this->base_redirect_back([
+            'session_message' => __('messages.success_restore',['title' => $topic->title])
+        ]);
     }
 }

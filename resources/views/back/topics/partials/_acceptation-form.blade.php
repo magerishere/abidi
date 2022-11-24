@@ -4,5 +4,5 @@
     <button @class([
         'btn btn-success',
         'btn-xs' => @$xs
-])  ><i class="fa fa-hand-grab-o"></i> {{__('back.accept')}} </button>
+])  ><i class="fa fa-hand-grab-o"></i> {{__('crud.restore')}} </button>
 </x-back.form>
