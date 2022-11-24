@@ -40,6 +40,10 @@
 <script src="{{asset('back/assets/js/jqvmap/dist/jquery.vmap.js')}}"></script>
 <script src="{{asset('back/assets/js/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
 <script src="{{asset('back/assets/js/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+<!-- bootstrap-wysiwyg -->
+<script src="{{asset('back/assets/js/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js')}}"></script>
+<script src="{{asset('back/assets/js/jquery.hotkeys/jquery.hotkeys.js')}}"></script>
+<script src="{{asset('back/assets/js/google-code-prettify/src/prettify.js')}}"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('back/assets/js/build/js/custom.min.js')}}"></script>
