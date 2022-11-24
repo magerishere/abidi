@@ -201,7 +201,7 @@
     </section>
 
     <!-- motion -->
-    <div class="motion_box d-none">
+    <div class="motion_box">
         <h1
             class="title"
             data-bs-toggle="modal"

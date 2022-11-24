@@ -10,3 +10,4 @@ Route::get('/', function () {
 });
 
 Route::resource('topics',TopicsController::class);
+Route::patch('topics/{topic}/updateStatus',[TopicsController::class,'updateStatus'])->name('topics.update.status');

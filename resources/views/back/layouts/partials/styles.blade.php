@@ -14,6 +14,13 @@
 <link href="{{asset('back/assets/css/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 <!-- bootstrap-wysiwyg -->
 <link href="{{asset('back/assets/js/google-code-prettify/bin/prettify.min.css')}}" rel="stylesheet">
+<!-- Datatables -->
+<link href="{{asset('back/assets/css/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('back/assets/css/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('back/assets/css/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('back/assets/css/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('back/assets/css/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
 
 <!-- Custom Theme Style -->
 <link href="{{asset('back/assets/css/build/css/custom.min.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('back/assets/css/helpers.css')}}">

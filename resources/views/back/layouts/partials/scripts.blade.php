@@ -45,6 +45,25 @@
 <script src="{{asset('back/assets/js/jquery.hotkeys/jquery.hotkeys.js')}}"></script>
 <script src="{{asset('back/assets/js/google-code-prettify/src/prettify.js')}}"></script>
 
+<!-- Datatables -->
+<script src="{{asset('back/assets/js/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-buttons-bs/js/buttons.bootstrap.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
+<script src="{{asset('back/assets/js/datatables.net-scroller/js/dataTables.scroller.min.js')}}"></script>
+<script src="{{asset('back/assets/js/jszip/dist/jszip.min.js')}}"></script>
+<script src="{{asset('back/assets/js/pdfmake/build/pdfmake.min.js')}}"></script>
+<script src="{{asset('back/assets/js/pdfmake/build/vfs_fonts.js')}}"></script>
+
 <!-- Custom Theme Scripts -->
 <script src="{{asset('back/assets/js/build/js/custom.min.js')}}"></script>
+<script src="{{asset('back/assets/js/helpers.js')}}"></script>
+@stack('scripts')
 

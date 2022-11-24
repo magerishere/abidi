@@ -7,23 +7,40 @@ use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
-    public function base_create(Model $model,array $data)
+    public function base_all_order_by_desc($model,$orderBy = 'created_at')
+    {
+        return $model::orderByDesc($orderBy)->get();
+    }
+
+    public function base_create($model,array $data)
     {
         return $model::create($data);
     }
 
-    public function base_find_by_id(Model $model,$id)
+    public function base_find_by_id($model,$id)
     {
         return $model::findOrFail($id);
     }
 
-    public function base_update(Model $model,array $data)
+    public function base_update($model,array $data)
     {
         $model->update($data);
         return $model;
     }
 
-    public function base_redirect_back(array $withData)
+    public function base_update_status($model,$status)
+    {
+        $model->update([
+            'status' => $status
+        ]);
+    }
+
+    public function base_destroy($model)
+    {
+        return $model->delete();
+    }
+
+    public function base_redirect_back(array $withData = [])
     {
         $withData['message'] = __('messages.success_submit');
         return redirect()->back()->with($withData);

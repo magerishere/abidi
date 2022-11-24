@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\TopicStatusEnums;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,11 +16,12 @@ return new class extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->integer('view');
-            $table->integer('like');
+            $table->string('status')->default(TopicStatusEnums::PENDING);
+            $table->integer('view')->default(0);
+            $table->integer('like')->default(0);
             $table->string('title');
             $table->text('content');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

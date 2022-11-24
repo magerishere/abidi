@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Enums\TopicStatusEnums;
+use App\Http\Requests\Back\TopicStoreRequest;
+use App\Http\Requests\Back\TopicUpdateRequest;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class TopicsController extends BackController
@@ -13,7 +17,8 @@ class TopicsController extends BackController
      */
     public function index()
     {
-        //
+        $topics = $this->base_all_order_by_desc(Topic::class);
+        return view('back.topics.index',compact('topics'));
     }
 
     /**
@@ -32,9 +37,11 @@ class TopicsController extends BackController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TopicStoreRequest $request)
     {
-        //
+        $request['status'] = TopicStatusEnums::ACCEPTED;
+        $this->base_create(Topic::class,$request->all());
+        return $this->base_redirect_back();
     }
 
     /**
@@ -54,9 +61,9 @@ class TopicsController extends BackController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Topic $topic)
     {
-        //
+        return view('back.topics.edit',compact('topic'));
     }
 
     /**
@@ -66,9 +73,11 @@ class TopicsController extends BackController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TopicUpdateRequest $request, Topic $topic)
     {
-        //
+        $this->base_update($topic,$request->all());
+
+        return $this->base_redirect_back();
     }
 
     /**
@@ -77,8 +86,15 @@ class TopicsController extends BackController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Topic $topic)
     {
-        //
+        $this->base_destroy($topic);
+        return $this->base_redirect_back();
+    }
+
+    public function updateStatus(Request $request,Topic $topic)
+    {
+        $this->base_update_status($topic,$request->get('status'));
+        return $this->base_redirect_back();
     }
 }
