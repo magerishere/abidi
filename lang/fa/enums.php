@@ -11,10 +11,12 @@ return [
         UserPermissionEnums::READ_USER => 'مشاهده کاربر',
         UserPermissionEnums::UPDATE_USER => 'ویرایش کاربر',
         UserPermissionEnums::DELETE_USER => 'حذف کاربر',
+        UserPermissionEnums::RESTORE_USER => 'بازگردانی کاربر',
         UserPermissionEnums::CREATE_TOPIC => 'ایجاد موضوع',
         UserPermissionEnums::READ_TOPIC => 'مشاهده موضوع',
         UserPermissionEnums::UPDATE_TOPIC => 'ویرایش موضوع',
         UserPermissionEnums::DELETE_TOPIC => 'حذف موضوع',
+        UserPermissionEnums::RESTORE_TOPIC => 'بازگردانی موضوع',
     ],
     UserRoleEnums::class => [
         UserRoleEnums::SUPERADMIN => 'ادمین کل',

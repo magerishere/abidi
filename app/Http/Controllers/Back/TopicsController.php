@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Enums\TopicStatusEnums;
 use App\Http\Requests\Back\TopicStoreRequest;
 use App\Http\Requests\Back\TopicUpdateRequest;
+use App\Models\Tag;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 
@@ -40,9 +41,11 @@ class TopicsController extends BackController
     public function store(TopicStoreRequest $request)
     {
         $request['status'] = TopicStatusEnums::ACCEPTED;
-        $topic = $this->base_create(Topic::class,$request->all());
+        $topic = $this->base_create(Topic::class, $request->all());
+        $this->base_update_or_create($topic, 'tag', ['content' => $request->get('tag')]);
+
         return $this->base_redirect_back([
-            'session_message' => __('messages.success_create',['title' => $topic->title])
+            'session_message' => __('messages.success_create', ['title' => $topic->title])
         ]);
     }
 
@@ -67,10 +70,10 @@ class TopicsController extends BackController
      */
     public function update(TopicUpdateRequest $request, Topic $topic)
     {
-        $this->base_update($topic,$request->all());
-
+        $topic = $this->base_update($topic, $request->all());
+        $this->base_update_or_create($topic, 'tag', ['content' => $request->get('tag')]);
         return $this->base_redirect_back([
-            'session_message' => __('messages.success_update',['title' => $topic->title])
+            'session_message' => __('messages.success_update', ['title' => $topic->title])
         ]);
     }
 

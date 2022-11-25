@@ -26,7 +26,8 @@
                 <h3>عمومی</h3>
                 <ul class="nav side-menu">
                     @foreach($menus as $menu)
-                        <li><a><i class="fa fa-home"></i> {{$menu['title']}} <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="{{$menu['icon_class']}}"></i> {{$menu['title']}} <span
+                                    class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 @foreach($menu['children'] as $item)
                                     <li><a href="{{$item['href']}}">{{$item['title']}}</a></li>
@@ -53,7 +54,7 @@
             <a data-toggle="tooltip" data-placement="top" title="قفل" class="lock_btn">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <x-back.form action="{{route('admin.logout')}}" isFlat>
+            <x-back.form action="{{route('admin.logout')}}" isFlat class="d-block">
                 <a data-toggle="tooltip" data-placement="top" data-form-submitter title="خروج" href="#">
                     <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                 </a>

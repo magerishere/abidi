@@ -2,6 +2,8 @@
 
 // merge string together with separator
 use App\Enums\UserPermissionEnums;
+use App\Enums\UserRoleEnums;
+use App\Models\User;
 
 if (!function_exists('str_merge')) {
     function str_merge(array $strings): string
@@ -68,5 +70,20 @@ if (!function_exists('user_permissions')) {
     function user_permissions()
     {
         return array_clean(UserPermissionEnums::asArray(), 'delete_');
+    }
+}
+
+
+if (!function_exists('getMemberUsers')) {
+    function getMemberUsers()
+    {
+        return User::role(UserRoleEnums::MEMBER)->get();
+    }
+}
+
+if (!function_exists('getDoctorUsers')) {
+    function getDoctorUsers()
+    {
+        return User::role(UserRoleEnums::DOCTOR)->get();
     }
 }

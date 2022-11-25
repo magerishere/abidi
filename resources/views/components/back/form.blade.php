@@ -1,7 +1,9 @@
-<form action="{{$action}}" @class([
+<form action="{{$action}}"
+      @class([
         "form-horizontal",
         "form-label-left",
-        "d-inline-table" => $isFlat
+        "d-inline-table" => $isFlat,
+        $class,
         ]) method="{{$method}}"
       @if($hasFile)
       enctype="multipart/form-data"

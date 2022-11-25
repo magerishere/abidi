@@ -16,6 +16,9 @@ class BaseController extends Controller
 
     public function base_create($model,array $data)
     {
+        if (!isset($data['user_id'])) {
+            $data['user_id'] = auth()->id();
+        }
         return $model::create($data);
     }
 
@@ -24,13 +27,22 @@ class BaseController extends Controller
         return $model::findOrFail($id);
     }
 
-    public function base_update($model,array $data)
+    public function base_update($model, array $data)
     {
         $model->update($data);
         return $model;
     }
 
-    public function base_update_status($model,$status)
+    public function base_update_or_create($model, string $relationName, array $data, array $condition = [])
+    {
+        if (!isset($data['user_id'])) {
+            $data['user_id'] = auth()->id();
+        }
+        $model->$relationName()->updateOrCreate($condition, $data);
+        return $model;
+    }
+
+    public function base_update_status($model, $status)
     {
         $model->update([
             'status' => $status
@@ -60,6 +72,9 @@ class BaseController extends Controller
 
     public function base_add_media($model, $media, $collection = 'default')
     {
+        if ($model->hasMedia($collection)) {
+            $model->clearMediaCollection($collection);
+        }
         $model->addMedia($media)
             ->toMediaCollection($collection);
 

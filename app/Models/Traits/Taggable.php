@@ -6,8 +6,8 @@ use App\Models\Tag;
 
 trait Taggable
 {
-    public function tags()
+    public function tag()
     {
-        return $this->morphMany(Tag::class, 'taggable');
+        return $this->morphOne(Tag::class, 'taggable');
     }
 }

@@ -3,10 +3,10 @@
 return [
     [
         'title' => __('back.topic'),
-        'icon_class'  => 'fa fa-home',
+        'icon_class' => 'fa fa-file',
         'children' => [
             [
-                'title' => str_merge([__('crud.index'),__('back.topic')]),
+                'title' => str_merge([__('crud.index'), __('back.topic')]),
                 'href' => route('admin.topics.index'),
             ],
             [
@@ -21,7 +21,7 @@ return [
     ],
     [
         'title' => __('back.user'),
-        'icon_class' => 'fa fa-home',
+        'icon_class' => 'fa fa-users',
         'children' => [
             [
                 'title' => str_merge([__('crud.index'), __('back.user')]),
@@ -34,6 +34,24 @@ return [
             [
                 'title' => str_merge([__('crud.trash'), __('back.user')]),
                 'href' => route('admin.users.trash.index'),
+            ],
+        ]
+    ],
+    [
+        'title' => __('back.doctor'),
+        'icon_class' => 'fa fa-users',
+        'children' => [
+            [
+                'title' => str_merge([__('crud.index'), __('back.doctor')]),
+                'href' => route('admin.doctors.index'),
+            ],
+            [
+                'title' => str_merge([__('crud.create'), __('back.doctor')]),
+                'href' => route('admin.doctors.create'),
+            ],
+            [
+                'title' => str_merge([__('crud.trash'), __('back.doctor')]),
+                'href' => route('admin.doctors.trash.index'),
             ],
         ]
     ],

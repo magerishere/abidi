@@ -2,8 +2,13 @@
     background: #faedec;
     border: 1px solid #e85445;
 }
+
 .d-inline-table {
     display: inline-table;
+}
+
+.d-block {
+    display: block;
 }
 
 .my-5 {

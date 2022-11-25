@@ -46,20 +46,7 @@
                                label="{{__('back.password_confirmation')}}"/>
         </x-back.form>
     </x-back.card>
-    <x-back.card title="{{str_merge([__('crud.edit'),__('back.role')])}}">
-        <x-back.form action="{{route('admin.users.update.role',$user->id)}}">
-            @method('PATCH')
-            <div class="my-5">
-                <label>
-                    {{__('back.role')}}
-                </label>
-                @foreach($roles as $role)
-                    <x-back.input-radio name="role" label="{{$role->name->description}}" value="{{$role->id}}"
-                                        is-checked="{{$user->hasRole($role->id)}}"/>
-                @endforeach
-            </div>
-        </x-back.form>
-    </x-back.card>
+
 
 @endsection
 

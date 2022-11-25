@@ -19,10 +19,12 @@ return new class extends Migration
             $table->string('status')->default(UserStatusEnums::PENDING);
             $table->string('name');
             $table->string('mobile')->unique();
+            $table->text('bio')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

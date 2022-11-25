@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Back;
 
 use App\Enums\UserStatusEnums;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\DoctorStoreRequest;
 use App\Http\Requests\Back\UserDestroyRequest;
 use App\Http\Requests\Back\UserStoreRequest;
 use App\Http\Requests\Back\UserPasswordUpdateRequest;
@@ -11,8 +13,9 @@ use App\Http\Requests\Back\UserRoleUpdateRequest;
 use App\Http\Requests\Back\UserStatusUpdateRequest;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Http\Request;
 
-class UsersController extends BackController
+class DoctorsController extends BackController
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +24,8 @@ class UsersController extends BackController
      */
     public function index()
     {
-        $users = getMemberUsers();
-        return view('back.users.index', compact('users'));
+        $users = getDoctorUsers();
+        return view('back.doctors.index', compact('users'));
     }
 
     /**
@@ -33,7 +36,7 @@ class UsersController extends BackController
     public function create()
     {
         $roles = $this->base_all_order_by_desc(Role::class);
-        return view('back.users.create', compact('roles'));
+        return view('back.doctors.create', compact('roles'));
     }
 
     /**
@@ -42,7 +45,7 @@ class UsersController extends BackController
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
+    public function store(DoctorStoreRequest $request)
     {
         $user = $this->base_create(User::class, $request->all());
         $this->base_add_media($user, $request->file('image'));
@@ -63,7 +66,7 @@ class UsersController extends BackController
     public function edit(User $user)
     {
         $roles = $this->base_all_order_by_desc(Role::class);
-        return view('back.users.edit', compact('user', 'roles'));
+        return view('back.doctors.edit', compact('user', 'roles'));
     }
 
     /**
@@ -131,7 +134,7 @@ class UsersController extends BackController
     public function trashIndex()
     {
         $users = $this->base_trash_all_order_by_desc(User::class);
-        return view('back.users.trash_index', compact('users'));
+        return view('back.doctors.trash_index', compact('users'));
     }
 
     public function trashRestore($id)

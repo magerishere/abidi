@@ -2,6 +2,7 @@
 
 use App\Enums\UserRoleEnums;
 use App\Http\Controllers\Back\AuthController;
+use App\Http\Controllers\Back\DoctorsController;
 use App\Http\Controllers\Back\TopicsController;
 use App\Http\Controllers\Back\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,21 @@ Route::middleware('auth')->group(function() {
     Route::prefix('users')->as('users.')->group(function () {
         Route::patch('/{user}/updateStatus', [UsersController::class, 'updateStatus'])->name('update.status');
         Route::patch('/{user}/updatePassword', [UsersController::class, 'updatePassword'])->name('update.password');
+        Route::patch('/{user}/updateRole', [UsersController::class, 'updateRole'])->name('update.role');
         Route::get('/trash', [UsersController::class, 'trashIndex'])->name('trash.index');
         Route::patch('/{topic}/restore', [UsersController::class, 'trashRestore'])->name('trash.restore');
+    });
+    /*
+    |--------------------------------------------------------------------------
+    | Doctor Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::resource('doctors', DoctorsController::class)->except(['show']);
+    Route::prefix('doctors')->as('doctors.')->group(function () {
+        Route::patch('/{user}/updateStatus', [DoctorsController::class, 'updateStatus'])->name('update.status');
+        Route::patch('/{user}/updatePassword', [DoctorsController::class, 'updatePassword'])->name('update.password');
+        Route::patch('/{user}/updateRole', [DoctorsController::class, 'updateRole'])->name('update.role');
+        Route::get('/trash', [DoctorsController::class, 'trashIndex'])->name('trash.index');
+        Route::patch('/{topic}/restore', [DoctorsController::class, 'trashRestore'])->name('trash.restore');
     });
 });

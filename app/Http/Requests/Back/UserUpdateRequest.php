@@ -4,8 +4,9 @@ namespace App\Http\Requests\Back;
 
 use App\Enums\UserPermissionEnums;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
-class UserUpdatePasswordRequest extends FormRequest
+class UserUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +25,13 @@ class UserUpdatePasswordRequest extends FormRequest
      */
     public function rules()
     {
+        $userId = $this->user->id;
         return [
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', "unique:users,email,$userId"],
+            'mobile' => ['required', 'digits:11', "unique:users,mobile,$userId"],
+            'image' => ['nullable', 'image'],
+            'role' => ['required']
         ];
     }
 }

@@ -18,8 +18,9 @@
 
         <x-back.form action="{{route('admin.topics.update',$topic->id)}}">
             @method('PATCH')
-            <x-back.input-text id="title" name="title" label="{{__('back.title')}}" value="{{$topic->title}}" />
-            <x-back.textarea id="content" name="content" title="{{__('back.content')}}" value="{{$topic->content}}" />
+            <x-back.input-text id="title" name="title" label="{{__('back.title')}}" value="{{$topic->title}}"/>
+            <x-back.textarea id="content" name="content" title="{{__('back.content')}}" value="{{$topic->content}}"/>
+            <x-back.input-tag name="tag" value="{{$topic->tag->content}}"/>
         </x-back.form>
     </x-back.card>
 @endsection

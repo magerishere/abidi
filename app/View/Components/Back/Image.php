@@ -4,14 +4,14 @@ namespace App\View\Components\Back;
 
 use Illuminate\View\Component;
 
-class Form extends Component
+class Image extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public string $method = 'post', public string $action = '#', public bool $isFlat = false, public bool $hasFile = false, public string $class = '')
+    public function __construct(public string $src)
     {
         //
     }
@@ -23,6 +23,6 @@ class Form extends Component
      */
     public function render()
     {
-        return view('components.back.form');
+        return view('components.back.image');
     }
 }
