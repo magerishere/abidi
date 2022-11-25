@@ -12,7 +12,7 @@ use BenSampo\Enum\Enum;
  */
 final class TopicStatusEnums extends Enum implements LocalizedEnum
 {
-    const REJECTED = 0;
-    const ACCEPTED = 1;
-    const PENDING = 2;
+    const REJECTED = 'Rejected';
+    const ACCEPTED = "Accepted";
+    const PENDING = "Pending";
 }

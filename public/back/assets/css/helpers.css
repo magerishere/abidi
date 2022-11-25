@@ -5,3 +5,7 @@
 .d-inline-table {
     display: inline-table;
 }
+
+.my-5 {
+    margin: 3rem 0;
+}

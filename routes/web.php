@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\UserPermissionEnums;
+use App\Enums\UserRoleEnums;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return array_clean(UserPermissionEnums::asArray(), ['update_', 'delete_', '_any']);
     return view('front.home');
 })->name('home');
 

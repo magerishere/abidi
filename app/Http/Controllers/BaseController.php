@@ -48,7 +48,7 @@ class BaseController extends Controller
         return $model::onlyTrashed()->orderByDesc($orderBy)->get();
     }
 
-    public function base_trash_find_by_id($model,$id)
+    public function base_trash_find_by_id($model, $id)
     {
         return $model::withTrashed()->findOrFail($id);
     }
@@ -58,9 +58,17 @@ class BaseController extends Controller
         return $model->restore();
     }
 
+    public function base_add_media($model, $media, $collection = 'default')
+    {
+        $model->addMedia($media)
+            ->toMediaCollection($collection);
+
+        return $model;
+    }
+
     public function base_redirect_back(array $withData = [])
     {
-        if(!isset($withData['session_type'])) {
+        if (!isset($withData['session_type'])) {
             $withData['session_type'] = SessionTypeEnums::SUCCESS;
         }
         return redirect()->back()->with($withData);

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Back;
 
 use App\Enums\SessionTypeEnums;
-use App\Http\Controllers\BaseController;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AuthController extends BaseController
+class AuthController extends BackController
 {
     public function login()
     {
@@ -17,8 +15,8 @@ class AuthController extends BaseController
 
     public function loginAttempt(Request $request)
     {
-        if(Auth::attempt($request->only('email','password'))) {
-            if(!auth()->user()->isAdmin()) {
+        if (Auth::attempt($request->only('email', 'password'))) {
+            if (!auth()->user()->isAdmin()) {
                 Auth::logout();
                 return $this->base_redirect_back([
                     'session_message' => __('auth.failed'),
@@ -27,7 +25,7 @@ class AuthController extends BaseController
             }
 
             $request->session()->regenerate();
-            return redirect()->intended('admin.dashboard');
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         return $this->base_redirect_back([

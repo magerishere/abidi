@@ -11,7 +11,7 @@ class Form extends Component
      *
      * @return void
      */
-    public function __construct(public string $method = 'post',public string $action = '#',public bool $isFlat = false)
+    public function __construct(public string $method = 'post', public string $action = '#', public bool $isFlat = false, public bool $hasFile = false)
     {
         //
     }

@@ -61,6 +61,8 @@
 <script src="{{asset('back/assets/js/jszip/dist/jszip.min.js')}}"></script>
 <script src="{{asset('back/assets/js/pdfmake/build/pdfmake.min.js')}}"></script>
 <script src="{{asset('back/assets/js/pdfmake/build/vfs_fonts.js')}}"></script>
+<!-- jQuery Tags Input -->
+<script src="{{asset('back/assets/js/jquery.tagsinput/src/jquery.tagsinput.js')}}"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('back/assets/js/build/js/custom.min.js')}}"></script>

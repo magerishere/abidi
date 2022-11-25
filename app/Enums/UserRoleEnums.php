@@ -12,8 +12,8 @@ use BenSampo\Enum\Enum;
  */
 final class UserRoleEnums extends Enum implements LocalizedEnum
 {
-    const SUPERADMIN = 0;
-    const ADMIN = 1;
-    const DOCTOR = 2;
-    const MEMBER = 3;
+    const SUPERADMIN = "Superadmin";
+    const ADMIN = "Admin";
+    const DOCTOR = "Doctor";
+    const MEMBER = "Member";
 }

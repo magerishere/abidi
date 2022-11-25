@@ -8,7 +8,7 @@
         "form-control",
         'parsley-error' => !empty($input_errors),
         ]) name="{{$name}}"
-        value="{{$value}}"
+           value="{{old($name,$value)}}"
     >
     <x-back.error
         :items="$input_errors"
