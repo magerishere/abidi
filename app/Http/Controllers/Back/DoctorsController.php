@@ -7,6 +7,7 @@ use App\Enums\UserRoleEnums;
 use App\Enums\UserStatusEnums;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\DoctorStoreRequest;
+use App\Http\Requests\Back\DoctorUpdateRequest;
 use App\Http\Requests\Back\UserDestroyRequest;
 use App\Http\Requests\Back\UserStoreRequest;
 use App\Http\Requests\Back\UserPasswordUpdateRequest;
@@ -68,12 +69,12 @@ class DoctorsController extends BackController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = $this->base_find_by_id(User::class, $id);
         $roles = $this->base_all_order_by_desc(Role::class);
-        $user_meta = $user->meta->where('key', UserMetaEnums::USER_PROFILE)->first();
-        dd($user->meta);
-        return view('back.doctors.edit', compact('user', 'user_meta', 'roles'));
+        $userMeta = $this->base_get_meta_by_key($user, UserMetaEnums::USER_PROFILE);
+        return view('back.doctors.edit', compact('user', 'userMeta', 'roles'));
     }
 
     /**
@@ -83,9 +84,13 @@ class DoctorsController extends BackController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, User $user)
+    public function update(DoctorUpdateRequest $request, $id)
     {
+        $user = $this->base_find_by_id(User::class, $id);
         $user = $this->base_update($user, $request->all());
+        $this->base_update_or_create($user, 'meta', ['value' => $request->get(UserMetaEnums::USER_PROFILE)], [
+            'key' => UserMetaEnums::USER_PROFILE,
+        ]);
         if ($image = $request->file('image')) {
             $this->base_add_media($user, $image);
         }

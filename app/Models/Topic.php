@@ -15,6 +15,7 @@ class Topic extends Model
     use Taggable;
 
     protected $fillable = [
+        'user_id',
         'status',
         'view',
         'like',

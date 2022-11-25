@@ -81,6 +81,12 @@ class BaseController extends Controller
         return $model;
     }
 
+    public function base_get_meta_by_key($model, string $key, $onlyValue = true)
+    {
+        $meta = $model->meta->where('key', $key)->first();
+        return $onlyValue ? $meta->value : $meta;
+    }
+
     public function base_redirect_back(array $withData = [])
     {
         if (!isset($withData['session_type'])) {

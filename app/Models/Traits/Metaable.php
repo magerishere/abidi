@@ -4,10 +4,10 @@ namespace App\Models\Traits;
 
 use App\Models\Meta;
 
-trait Metatable
+trait Metaable
 {
     public function meta()
     {
-        return $this->morphMany(Meta::class, 'metatable');
+        return $this->morphMany(Meta::class, 'metaable');
     }
 }

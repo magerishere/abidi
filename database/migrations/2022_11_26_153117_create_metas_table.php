@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('metas', function (Blueprint $table) {
             $table->id();
-            $table->morphs('metatable');
+            $table->morphs('metaable');
             $table->string('key');
             $table->json('value');
             $table->timestamps();
