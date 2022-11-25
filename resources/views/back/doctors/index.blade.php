@@ -1,7 +1,7 @@
 @extends('back.layouts.master')
 
 @section('content')
-    <x-back.card title="{{str_merge([__('crud.index'),__('back.topic')])}}">
+    <x-back.card title="{{str_merge([__('crud.index'),__('back.doctor')])}}">
         <x-back.table :heads="[
     __('back.id'),
     __('back.name'),
@@ -18,15 +18,15 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->mobile}}</td>
                     <td>
-                        @include('back.users.partials._status-text',['user' => $user])
+                        @include('back.doctors.partials._status-text',['user' => $user])
                     </td>
                     <td>{{$user->created_at}}</td>
                     <td class="nowrap">
-                        @include('back.users.partials._acceptation-form',['user' => $user,"xs" => true])
-                        @include('back.users.partials._rejection-form',['user' => $user,"xs" => true])
-                        @include('back.users.partials._show-link',['user' => $user,"xs" => true])
-                        @include('back.users.partials._edit-link',['user' => $user,"xs" => true])
-                        @include('back.users.partials._destruction-form', ['user' => $user,"xs" => true])
+                        @include('back.doctors.partials._acceptation-form',['user' => $user,"xs" => true])
+                        @include('back.doctors.partials._rejection-form',['user' => $user,"xs" => true])
+                        @include('back.doctors.partials._show-link',['user' => $user,"xs" => true])
+                        @include('back.doctors.partials._edit-link',['user' => $user,"xs" => true])
+                        @include('back.doctors.partials._destruction-form', ['user' => $user,"xs" => true])
                     </td>
                 </tr>
 

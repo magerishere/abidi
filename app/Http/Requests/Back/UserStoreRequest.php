@@ -30,7 +30,6 @@ class UserStoreRequest extends FormRequest
             'mobile' => ['required', 'digits:11', 'unique:users,mobile'],
             'password' => ['required', 'string', 'confirmed', 'min:8'],
             'image' => ['nullable', 'image'],
-            'role' => ['required']
         ];
     }
 }

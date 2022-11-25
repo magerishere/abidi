@@ -26,13 +26,19 @@
 
         <x-back.image src="{{$user->getFirstMediaUrl()}}"/>
 
-        <x-back.form action="{{route('admin.users.update',$user->id)}}" hasFile>
+        <x-back.form action="{{route('admin.doctors.update',$user->id)}}" hasFile>
             @method('PATCH')
-            <x-back.input-text id="name" name="name" label="{{__('back.name')}}" value="{{$user->name}}"/>
-            <x-back.input-text id="email" name="email" type="email" label="{{__('back.email')}}"
-                               value="{{$user->email}}"/>
-            <x-back.input-text id="mobile" name="mobile" label="{{__('back.mobile')}}" value="{{$user->mobile}}"/>
+            <x-back.input-text id="name" name="name" label="{{__('back.name')}}"/>
+            <x-back.input-text id="email" name="email" type="email" label="{{__('back.email')}}"/>
+            <x-back.input-text id="mobile" name="mobile" label="{{__('back.mobile')}}"/>
+            <x-back.input-text id="medical_id" name="{{\App\Enums\UserMetaEnums::USER_PROFILE}}[medical_id]"
+                               label="{{__('back.medical_id')}}"/>
+
             <x-back.input-text id="image" name="image" type="file" label="{{__('back.image')}}"/>
+            <x-back.input-tag name="{{\App\Enums\UserMetaEnums::USER_PROFILE}}[special]"
+                              label="{{__('back.special')}}"/>
+
+            <x-back.textarea id="bio" name="bio" title="{{__('back.bio')}}"/>
 
 
         </x-back.form>

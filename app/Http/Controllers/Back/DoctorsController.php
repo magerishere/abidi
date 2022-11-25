@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Enums\UserMetaEnums;
+use App\Enums\UserRoleEnums;
 use App\Enums\UserStatusEnums;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\DoctorStoreRequest;
@@ -50,8 +52,11 @@ class DoctorsController extends BackController
         $user = $this->base_create(User::class, $request->all());
         $this->base_add_media($user, $request->file('image'));
 
-        $user->assignRole($request->get('role'));
+        $user->assignRole(UserRoleEnums::DOCTOR);
 
+        $this->base_update_or_create($user, 'meta', ['value' => $request->get(UserMetaEnums::USER_PROFILE)], [
+            'key' => UserMetaEnums::USER_PROFILE,
+        ]);
         return $this->base_redirect_back([
             'session_message' => __('messages.success_create', ['title' => $user->name])
         ]);
@@ -66,7 +71,9 @@ class DoctorsController extends BackController
     public function edit(User $user)
     {
         $roles = $this->base_all_order_by_desc(Role::class);
-        return view('back.doctors.edit', compact('user', 'roles'));
+        $user_meta = $user->meta->where('key', UserMetaEnums::USER_PROFILE)->first();
+        dd($user->meta);
+        return view('back.doctors.edit', compact('user', 'user_meta', 'roles'));
     }
 
     /**

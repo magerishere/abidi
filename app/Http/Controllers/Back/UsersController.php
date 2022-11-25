@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Enums\UserRoleEnums;
 use App\Enums\UserStatusEnums;
 use App\Http\Requests\Back\UserDestroyRequest;
 use App\Http\Requests\Back\UserStoreRequest;
@@ -47,7 +48,7 @@ class UsersController extends BackController
         $user = $this->base_create(User::class, $request->all());
         $this->base_add_media($user, $request->file('image'));
 
-        $user->assignRole($request->get('role'));
+        $user->assignRole(UserRoleEnums::MEMBER);
 
         return $this->base_redirect_back([
             'session_message' => __('messages.success_create', ['title' => $user->name])

@@ -31,7 +31,6 @@ class UserUpdateRequest extends FormRequest
             'email' => ['required', 'email', 'max:255', "unique:users,email,$userId"],
             'mobile' => ['required', 'digits:11', "unique:users,mobile,$userId"],
             'image' => ['nullable', 'image'],
-            'role' => ['required']
         ];
     }
 }

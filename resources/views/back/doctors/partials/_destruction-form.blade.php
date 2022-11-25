@@ -1,4 +1,4 @@
-<x-back.form action="{{route('admin.users.destroy',$user->id)}}" is-flat>
+<x-back.form action="{{route('admin.doctors.destroy',$user->id)}}" is-flat>
     @method('DELETE')
     <button @class([
         'btn btn-danger',

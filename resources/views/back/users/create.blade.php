@@ -11,14 +11,6 @@
                                label="{{__('back.password_confirmation')}}"/>
             <x-back.input-text id="image" name="image" type="file" label="{{__('back.image')}}"/>
 
-            <div class="my-5">
-                <label>
-                    {{__('back.role')}}
-                </label>
-                @foreach($roles as $role)
-                    <x-back.input-radio name="role" label="{{$role->name->description}}" value="{{$role->id}}"/>
-                @endforeach
-            </div>
 
         </x-back.form>
     </x-back.card>

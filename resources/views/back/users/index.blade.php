@@ -1,7 +1,7 @@
 @extends('back.layouts.master')
 
 @section('content')
-    <x-back.card title="{{str_merge([__('crud.index'),__('back.topic')])}}">
+    <x-back.card title="{{str_merge([__('crud.index'),__('back.user')])}}">
         <x-back.table :heads="[
     __('back.id'),
     __('back.name'),
