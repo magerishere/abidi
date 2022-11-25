@@ -8,7 +8,6 @@
                     {{$slot}}
                     @unless($isFlat)
                     <div class="form-group">
-
                             <button type="submit" class="btn btn-success">ارسال</button>
                             <button type="button" class="btn btn-secondary">انصراف</button>
                     </div>

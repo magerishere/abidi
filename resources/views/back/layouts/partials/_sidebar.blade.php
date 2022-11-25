@@ -53,9 +53,12 @@
             <a data-toggle="tooltip" data-placement="top" title="قفل" class="lock_btn">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="خروج" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-            </a>
+            <x-back.form action="{{route('admin.logout')}}" isFlat>
+                <a data-toggle="tooltip" data-placement="top" data-form-submitter title="خروج" href="#">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                </a>
+            </x-back.form>
+
         </div>
         <!-- /menu footer buttons -->
     </div>

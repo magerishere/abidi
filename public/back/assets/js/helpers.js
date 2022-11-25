@@ -26,5 +26,34 @@ const textAreaHandler = (editorSelector,hiddenSelector) => {
         }
     }
 }
+
+// sometimes you may wish a tag submit form
+// only need to do is set 'data-form-submitter' attribute into tag
+// example <a href="#" data-form-submitter >Form Submitter</a>
+const formSubmitter = () => {
+    const _initAddSubmitEvent = () => {
+        $("[data-form-submitter]").each(function() {
+            console.log('click')
+            const that = $(this);
+            console.log(that)
+
+            const parentForm =  that.parents('form');
+            that.click(() => {
+                console.log('click')
+
+                parentForm.submit();
+            })
+        });
+    }
+
+    return {
+        init: () => {
+            _initAddSubmitEvent();
+        }
+    }
+}
+
+
 // Runner helpers
 textAreaHandler().init();
+formSubmitter().init();

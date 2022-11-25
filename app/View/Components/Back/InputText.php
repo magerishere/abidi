@@ -11,7 +11,7 @@ class InputText extends Component
      *
      * @return void
      */
-    public function __construct(public string $id,public string $label,public string $name,public string $value = '',public bool $isRequired = true)
+    public function __construct(public string $id,public string $label,public string $name,public string $value = '',public bool $isRequired = true,public string $type = 'text')
     {
         //
     }
