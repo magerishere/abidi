@@ -6,6 +6,8 @@
     __('back.id'),
     __('back.title'),
     __('back.status'),
+    __('back.view'),
+    __('back.like'),
     __('back.created_at'),
     __('back.action'),
 ]">
@@ -16,6 +18,8 @@
                             <td>
                                 @include('back.topics.partials._status-text',['topic' => $topic])
                             </td>
+                            <td>{{$topic->view}}</td>
+                            <td>{{$topic->like}}</td>
                             <td>{{$topic->created_at}}</td>
                             <td class="nowrap">
                                 @include('back.topics.partials._acceptation-form',['topic' => $topic,"xs" => true])

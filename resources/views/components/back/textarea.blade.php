@@ -97,7 +97,7 @@
             @php
                 $input_errors = $errors->get($name);
             @endphp
-            <div id="editor"  placeholder="{!! $value !!}" @class([
+            <div id="editor"  content="{!! $value !!}" @class([
         "editor-wrapper",
         'error' => !empty($input_errors)
         ])>
