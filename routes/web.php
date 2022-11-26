@@ -1,7 +1,8 @@
 <?php
 
-use App\Enums\UserPermissionEnums;
-use App\Enums\UserRoleEnums;
+use App\Http\Controllers\Front\AuthController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\TopicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-})->name('home');
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginAttempt'])->name('login.attempt');
+});
 
-Route::get('/login', function() {
-    return 'login';
-})->name('login');
+
+/*
+|--------------------------------------------------------------------------
+| Home Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', [HomeController::class, 'index'])->name('home');
+/*
+|--------------------------------------------------------------------------
+| Topics Routes
+|--------------------------------------------------------------------------
+*/
+Route::resource('topics', TopicsController::class);

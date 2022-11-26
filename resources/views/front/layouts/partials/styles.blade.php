@@ -1,5 +1,5 @@
 <link rel="icon" type="icon" href="{{asset('front/assets/images/favicon.png')}}"/>
-<link rel="stylesheet" href="{{asset('front/assets/assets/css/bootstrap.min.css')}}"/>
+<link rel="stylesheet" href="{{asset('front/assets/css/bootstrap.min.css')}}"/>
 <link rel="stylesheet" href="{{asset('front/assets/css/harmony.css')}}"/>
 <link rel="stylesheet" href="{{asset('front/assets/css/main.css')}}"/>
 <link rel="stylesheet" href="{{asset('front/assets/css/responsive.css')}}"/>

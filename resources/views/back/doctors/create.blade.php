@@ -4,7 +4,7 @@
     <x-back.card title="{{str_merge([__('crud.create'),__('back.doctor')])}}">
         <x-back.form action="{{route('admin.doctors.store')}}" hasFile>
             <x-back.input-text id="name" name="name" label="{{__('back.name')}}"/>
-            <x-back.input-text id="email" name="email" type="email" label="{{__('back.email')}}"/>
+            <x-back.input-text id="email" name="email" type="email" label="{{__('back.email')}}" :is-required="false"/>
             <x-back.input-text id="mobile" name="mobile" label="{{__('back.mobile')}}"/>
             <x-back.input-text id="medical_id" name="{{\App\Enums\UserMetaEnums::USER_PROFILE}}[medical_id]"
                                label="{{__('back.medical_id')}}"/>

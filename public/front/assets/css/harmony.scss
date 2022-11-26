@@ -68,7 +68,6 @@ $theme-colors: (
 html {
     scroll-behavior: smooth;
 }
-
 .container {
     max-width: 1140px;
 }
@@ -80,12 +79,10 @@ body {
     font-style: normal;
     font-family: dana;
 }
-
 ul {
     padding-right: 0;
     list-style: none;
 }
-
 h1,
 h2,
 h3,
@@ -94,7 +91,6 @@ h5,
 h6 {
     font-weight: bold;
 }
-
 h2 {
     font-size: 32px;
     line-height: 2;
@@ -102,31 +98,26 @@ h2 {
     margin: 2rem 0;
     text-align: center;
 }
-
 h3 {
     font-size: 24px;
     line-height: 2;
     color: #14317a;
     margin: 2rem 0;
 }
-
 img,
 svg {
     max-width: 100%;
 }
-
 a {
     transition: all 0.5s;
     color: #000;
     text-decoration: none;
 }
-
 a:hover {
     text-decoration: none;
     transition: all 0.5s;
     border: none;
 }
-
 a:focus,
 button:focus {
     border: none;
@@ -139,7 +130,6 @@ p {
     text-align: justify;
     text-align-last: center;
 }
-
 ul {
     padding-right: 0;
     list-style: none;
@@ -156,7 +146,6 @@ select:active {
     display: inline-flex;
     width: 100%;
 }
-
 .wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -170,11 +159,9 @@ select:active {
     padding: 10px 30px;
     margin: 0 20px;
 }
-
 section {
     padding: 2rem 0;
 }
-
 .content-center {
     display: flex;
     align-self: center;
@@ -187,26 +174,21 @@ section {
     border-radius: 10px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
-
 .form-pd-center {
     padding: 10px 20px;
     margin: 20px 10px;
     text-align: center;
 }
-
 .form-group {
     margin: 20px 0;
 }
-
 .form-control {
     border-radius: 10px;
 }
-
 .error {
     color: red;
     font-size: 14px;
 }
-
 .success-submit {
     color: #198754;
 }

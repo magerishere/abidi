@@ -30,7 +30,7 @@
             @method('PATCH')
             <x-back.input-text id="name" name="name" label="{{__('back.name')}}" value="{{$user->name}}"/>
             <x-back.input-text id="email" name="email" type="email" label="{{__('back.email')}}"
-                               value="{{$user->email}}"/>
+                               value="{{$user->email}}" :is-required="false"/>
             <x-back.input-text id="mobile" name="mobile" label="{{__('back.mobile')}}" value="{{$user->mobile}}"/>
             <x-back.input-text id="image" name="image" type="file" label="{{__('back.image')}}"/>
 

@@ -14,21 +14,11 @@
 @include('front.layouts.header')
 
 <!-- Design by Harmony Agency -->
-<div class="wrapper">
 
-    <!-- main -->
-    <section id="main">
-
-        <div class="container">
-
-            <div class="main_content">
-                @yield('content')
-            </div>
-        </div>
-    </section>
-
-
-</div>
+{{--Main--}}
+<main>
+    @yield('content')
+</main>
 <!-- footer -->
 @include('front.layouts.footer')
 <!-- Design by Harmony Agency -->

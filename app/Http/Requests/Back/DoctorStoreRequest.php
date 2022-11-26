@@ -26,7 +26,7 @@ class DoctorStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users,email'],
+            'email' => ['nullable', 'email', 'max:255', 'unique:users,email'],
             'mobile' => ['required', 'digits:11', 'unique:users,mobile'],
             'password' => ['required', 'string', 'confirmed', 'min:8'],
             'image' => ['nullable', 'image'],

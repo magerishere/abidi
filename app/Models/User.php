@@ -68,6 +68,16 @@ class User extends Authenticatable implements HasMedia
         return $this->hasAnyRole([UserRoleEnums::SUPERADMIN, UserRoleEnums::ADMIN]);
     }
 
+    public function isDoctor()
+    {
+        return $this->hasAnyRole([UserRoleEnums::DOCTOR]);
+    }
+
+    public function isMember()
+    {
+        return $this->hasAnyRole([UserRoleEnums::MEMBER]);
+    }
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')

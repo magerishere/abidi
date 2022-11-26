@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\TopicStatusEnums;
+use App\Models\Traits\HasReadableDates;
 use App\Models\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,7 @@ class Topic extends Model
     use HasFactory;
     use SoftDeletes;
     use Taggable;
+    use HasReadableDates;
 
     protected $fillable = [
         'user_id',
