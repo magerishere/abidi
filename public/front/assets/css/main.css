@@ -3,16 +3,13 @@ body {
     /* overflow-x: hidden;
     overflow-y: hidden; */
 }
-
 section {
     padding: 0;
 }
-
 ul {
     margin: 0;
     padding: 0;
 }
-
 * {
     background-repeat: no-repeat;
     background-position: center;
@@ -102,19 +99,16 @@ header {
     position: absolute;
     width: 100%;
 }
-
 header .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 135px;
 }
-
 header .content .header_items {
     display: flex;
     align-items: center;
 }
-
 header .content .header_items li {
     color: #0d3f6d;
     font-weight: 700;
@@ -122,22 +116,19 @@ header .content .header_items li {
     line-height: 1.5;
     margin: 0 0 0 37px;
 }
-
 header .content .header_items ul li:last-child {
     margin: 0;
 }
-
 header .content .btn_group {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-
 header .content .btn_group i {
     margin-left: 4px;
 }
 
-header .user-icon {
+header .user_icon {
     margin-right: 24px;
     display: none;
 }
@@ -149,7 +140,6 @@ header .bell_icon {
     position: relative;
     display: none;
 }
-
 header .bell_icon .bell_number {
     background: #d90429;
     color: #fff;
@@ -163,7 +153,6 @@ header .bell_icon .bell_number {
     font-weight: 500;
     font-size: 12px;
 }
-
 /*================================ header sticky ================================*/
 .stickyHeader {
     position: fixed;
@@ -187,24 +176,20 @@ header .bell_icon .bell_number {
     align-items: center;
     justify-content: flex-start;
 }
-
 #starter .starter_img1 {
     position: absolute;
     right: 111px;
     top: 138px;
 }
-
 #starter .starter_img2 {
     position: absolute;
     right: 111px;
     bottom: 70px;
 }
-
 #starter .starter_content .logo {
     max-width: 204px;
     margin: 0 0 18px;
 }
-
 #starter .starter_content .caption {
     color: #8d8d8d;
     font-weight: 300;
@@ -214,7 +199,6 @@ header .bell_icon .bell_number {
     text-align: justify;
     text-align-last: right;
 }
-
 #starter .starter_content .input_box {
     background: #ffffff;
     box-shadow: 0px -4px 24px rgba(0, 149, 218, 0.12),
@@ -226,7 +210,6 @@ header .bell_icon .bell_number {
     align-items: center;
     justify-content: flex-start;
 }
-
 #starter .starter_content .input_box .inp {
     border: none;
     background: none;
@@ -239,7 +222,6 @@ header .bell_icon .bell_number {
     font-size: 22px;
     line-height: 16px;
 }
-
 #starter .starter_content .input_box .inp::placeholder {
     color: rgba(0, 0, 0, 0.26);
     font-weight: 400;
@@ -435,11 +417,9 @@ button.accordion-button {
     cursor: pointer;
     border-bottom: 1px solid;
 }
-
 .accordion-header .accordion-button {
     background: #ededed;
 }
-
 #faq .accordion .accordion-button:not(.collapsed) span {
     border-bottom: 1px solid #fff;
     padding-bottom: 10px;
@@ -450,7 +430,6 @@ footer {
     background: #e6f2f7;
     padding-top: 27px;
 }
-
 footer .footer_title {
     color: #0d3f6d;
     font-weight: 900;
@@ -459,7 +438,6 @@ footer .footer_title {
     text-align-last: right;
     margin: 0 0 5px;
 }
-
 footer .border_footer {
     background: #0095da;
     height: 6px !important;
@@ -468,19 +446,16 @@ footer .border_footer {
     border-radius: 50px;
     margin: 0 0 32px;
 }
-
 footer .contact_us li {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     margin: 0 0 16px;
 }
-
 footer .contact_us img {
     margin-left: 5px;
     max-width: 13px;
 }
-
 footer .contact_us span {
     color: #0d3f6d;
     font-weight: 300;
@@ -489,11 +464,9 @@ footer .contact_us span {
     text-align-last: right;
     margin: 0;
 }
-
 footer .contact_us .address span {
     max-width: 85%;
 }
-
 footer .access li {
     color: #0d3f6d;
     font-weight: 300;
@@ -503,30 +476,24 @@ footer .access li {
     margin: 0;
     margin: 0 0 16px;
 }
-
 footer .access li:hover {
     font-weight: 700;
 }
-
 footer .social-icon i {
     font-size: 42px;
     color: #0d3f6d;
 }
-
 footer .social-icon {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-
 footer .logo_footer {
     margin: 20px 0;
 }
-
 footer .social-icon a {
     margin-left: 30px;
 }
-
 footer .harmonyLogo {
     max-width: 70%;
     opacity: 0.6;
@@ -634,22 +601,18 @@ footer .harmonyLogo:hover {
     margin: 0;
     max-width: 90%;
 }
-
 #popular_topics .content_box .visit_box {
     color: #0d3f6d;
 }
-
 #popular_topics .content_box .visit_box .visit_number {
     font-weight: 700;
     font-size: 18px;
     line-height: 29px;
     color: #0d3f6d;
 }
-
 #popular_topics .callToAction2 {
     margin: 0 auto;
 }
-
 #popular_topics .callToAction2 i {
     margin-right: 8px;
 }
@@ -658,23 +621,19 @@ footer .harmonyLogo:hover {
 .report_box {
     min-width: 350px;
 }
-
 .report_box .col-4 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .report_box .visit_box {
     margin: 0 auto 8px;
     text-align: center;
 }
-
 .report_box .visit_box i {
     color: #0d3f6d;
 }
-
 .report_box .statistics_txt {
     color: #0d3f6d;
     font-weight: 300;
@@ -776,18 +735,21 @@ footer .harmonyLogo:hover {
 #registerModal .callToAction2 img {
     margin-left: 4px;
 }
+
 #registerModal .modal-body {
     position: relative;
     background: #ffffff;
     border-radius: 8px;
     padding: 0;
 }
-#registerModal .modal-body .btn-close {
+
+.modal-body .btn-close {
     position: absolute;
     left: 3%;
     top: 3%;
     z-index: 10;
 }
+
 #registerModal .problem_code {
     color: rgba(126, 126, 126, 0.65);
     font-weight: 300;
@@ -808,17 +770,14 @@ footer .harmonyLogo:hover {
 #registerModal .forget_password a {
     color: #0095da;
 }
-
 #registerModal .steps {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
-
 #registerModal .step1 {
     /* display: none; */
 }
-
 #registerModal .step2 {
     display: none;
 }
@@ -885,11 +844,9 @@ footer .harmonyLogo:hover {
     padding-left: 35px;
     display: block;
 }
-
 #registerModal #confirm.error {
     border: none !important;
 }
-
 #registerModal input.error {
     color: #000;
     border: 1px solid #d90429 !important;
@@ -961,7 +918,6 @@ footer .harmonyLogo:hover {
     font-size: 14px;
     margin-bottom: 5px;
 }
-
 #registerModal .send_to_phone,
 #registerModal .send_to_email {
     font-weight: 300;
@@ -972,7 +928,6 @@ footer .harmonyLogo:hover {
     margin: 0 auto;
     cursor: pointer;
 }
-
 #registerModal .change_pass_link {
     color: #000000;
     font-weight: 500;
@@ -981,16 +936,13 @@ footer .harmonyLogo:hover {
     text-align: center;
     text-align-last: center;
 }
-
 #registerModal .change_pass_link span {
     font-weight: 700;
 }
-
 #registerModal .steps.step8,
 #registerModal .steps.step9 {
     max-width: 85%;
 }
-
 #registerModal .go_forum {
     font-weight: 500;
     font-size: 18px;
@@ -999,7 +951,6 @@ footer .harmonyLogo:hover {
     align-items: center;
     justify-content: center;
 }
-
 #registerModal .go_forum i {
     margin-right: 5px;
     color: #0095da;
@@ -1010,16 +961,13 @@ footer .harmonyLogo:hover {
 #single_question {
     margin: 96px 0 117px;
 }
-
 #single_question .user_properties {
     box-shadow: 0px 0px 21px 1px rgba(0, 0, 0, 0.17);
     margin: -70px 0 54px;
 }
-
 #single_question .topic_box {
     margin-bottom: 18px;
 }
-
 .single_topic {
     margin-top: 18px;
 }
@@ -1031,7 +979,7 @@ footer .harmonyLogo:hover {
     padding: 33px 33px 56px;
 }
 
-.single_topic .topic_box .user_properties {
+.user_properties {
     background: #ffffff;
     border-radius: 78px;
     padding: 9px;
@@ -1042,7 +990,7 @@ footer .harmonyLogo:hover {
     align-items: center;
 }
 
-.single_topic .topic_box .user_properties .user_img {
+.user_properties .user_img {
     border: 1.5px solid #0095da;
     border-radius: 50%;
     width: 64px;
@@ -1050,11 +998,11 @@ footer .harmonyLogo:hover {
     margin: 0 0 0 7px;
 }
 
-.single_topic .topic_box .user_properties .user_img img {
+.user_properties .user_img img {
     border-radius: 50%;
 }
 
-.single_topic .topic_box .user_properties .user_info .user_name {
+.user_properties .user_info .user_name {
     font-weight: 700;
     font-size: 20px;
     line-height: 16px;
@@ -1064,7 +1012,7 @@ footer .harmonyLogo:hover {
     margin: 0 0 10px;
 }
 
-.single_topic .topic_box .user_properties .user_info .user_status {
+.user_properties .user_info .user_status {
     font-weight: 300;
     font-size: 18px;
     line-height: 16px;
@@ -1081,7 +1029,6 @@ footer .harmonyLogo:hover {
     position: relative;
     margin-bottom: 50px;
 }
-
 .single_topic .topic_box .topic_top .right .topic_title {
     color: #000000;
     font-weight: 800;
@@ -1091,7 +1038,6 @@ footer .harmonyLogo:hover {
     text-align-last: right;
     margin: 0;
 }
-
 .single_topic .topic_box .topic_top .topic_title_border {
     background: rgba(0, 149, 218, 0.53);
     width: 248px;
@@ -1099,7 +1045,6 @@ footer .harmonyLogo:hover {
     right: 0;
     bottom: -30px;
 }
-
 .topic_date .date {
     color: #767676;
     font-weight: 300;
@@ -1107,7 +1052,6 @@ footer .harmonyLogo:hover {
     line-height: 46px;
     margin: 0;
 }
-
 .single_topic .topic_box .topic_caption {
     color: #5c5c5c;
     font-weight: 500;
@@ -1118,7 +1062,6 @@ footer .harmonyLogo:hover {
     margin: 34px 0;
     padding-left: 25px;
 }
-
 .single_topic .topic_box .topic_bottom {
     display: flex;
     align-items: center;
@@ -1131,16 +1074,40 @@ footer .harmonyLogo:hover {
     justify-content: flex-start;
 }
 
-.single_topic .topic_box .topic_bottom .topic_tags {
+.topic_tags {
     background: rgba(0, 149, 218, 0.74);
     border-radius: 46px;
     padding: 1px 14px;
     width: fit-content;
-    font-weight: 400;
-    font-size: 18px;
+    max-width: 120px;
     line-height: 29px;
-    color: #ffffff;
     margin-left: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    border: none;
+    text-align: center;
+}
+
+.topic_tags::marker {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/createTopic.png);
+}
+
+.field_with_errors input + span:after {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.topic_tags span {
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
 }
 
 .topic_options {
@@ -1159,20 +1126,17 @@ footer .harmonyLogo:hover {
     align-items: center;
     justify-content: space-between;
 }
-
 .single_topic .topic_box_bottom {
     background: #ffffff;
     box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
     padding: 20px 35px;
 }
-
 .response_box {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-
 .response_box .callToAction {
     width: 142px;
     height: 46px;
@@ -1181,7 +1145,6 @@ footer .harmonyLogo:hover {
     font-size: 18px;
     line-height: 29px;
 }
-
 .response_box .report_spam {
     color: #777777;
     font-weight: 400;
@@ -1191,42 +1154,34 @@ footer .harmonyLogo:hover {
     text-align: right;
     text-align-last: right;
 }
-
 .answerBox_top {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .single_topic.doctors_comment {
     margin-top: 0;
 }
-
 .single_topic.doctors_comment .topic_box {
     background: #d5f2ff;
     border-radius: 0px 0px 20px 20px;
     margin-top: 0;
 }
-
 .single_topic.doctors_comment .topic_box .user_properties {
     background: transparent;
 }
-
 .doctor_check_img {
     margin-right: 9px;
 }
-
 /*================================ filter_box ================================*/
 .filter_box {
     margin-bottom: 37px;
 }
-
 .filter_box .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .filter_box .nav-link {
     background: none;
     border: none;
@@ -1237,11 +1192,9 @@ footer .harmonyLogo:hover {
     line-height: 16px;
     margin-left: 25px;
 }
-
 .filter_box .nav-link.active {
     color: #0d3f6d;
 }
-
 .filter_box .answers_box {
     color: #000000;
     font-weight: 500;
@@ -1251,13 +1204,11 @@ footer .harmonyLogo:hover {
     text-align-last: left;
     margin: 0;
 }
-
 .filter_box .filter {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-
 .filter_box .filter .filter_txt {
     color: #000000;
     font-weight: 500;
@@ -1267,14 +1218,12 @@ footer .harmonyLogo:hover {
     text-align: right;
     text-align-last: right;
 }
-
 .page_number_box {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 81px 0 96px;
 }
-
 .page_number_box .page_number {
     background: #ecebeb;
     color: #5c5c5c;
@@ -1292,7 +1241,6 @@ footer .harmonyLogo:hover {
     justify-content: center;
     cursor: pointer;
 }
-
 .page_number_box .page_number.active {
     background: #0d3f6d;
     color: #ffffff;
@@ -1303,7 +1251,6 @@ footer .harmonyLogo:hover {
 .active_doctors {
     margin-bottom: 142px;
 }
-
 .active_doctors .title {
     color: #000000;
     font-weight: 700;
@@ -1313,13 +1260,13 @@ footer .harmonyLogo:hover {
     text-align: center;
     text-align-last: center;
 }
-
 .active_doctors .doctor_img {
     box-shadow: 0px 0px 22px -1px rgba(30, 30, 30, 0.08);
     border-radius: 8px;
     margin-bottom: 27px;
+    width: 282px;
+    height: 211px;
 }
-
 .active_doctors .doctor_name {
     color: #000000;
     font-weight: 700;
@@ -1338,4 +1285,483 @@ footer .harmonyLogo:hover {
     margin: 0 auto;
     text-align: center;
     text-align-last: center;
+}
+
+/*================================ createTopicModal ================================*/
+#createTopicModal .modal-body {
+    padding: 45px 0;
+    position: relative;
+}
+
+/* =========== create_step1 =========== */
+#createTopicModal .create_step1 {
+    /* display: none; */
+}
+
+#createTopicModal .create_step1 .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+}
+
+#createTopicModal .create_step1 .top .createTopic_img {
+    margin-left: 6px;
+}
+
+#createTopicModal .create_step1 .top .title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    text-align-last: center;
+    margin: 0 auto;
+    display: contents;
+}
+
+#createTopicModal .create_step1 .caption {
+    color: #000000;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    text-align-last: center;
+    margin: 0 auto 42px;
+}
+
+/* topic_title */
+#createTopicModal .create_step1 .topic_title {
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: right;
+    text-align-last: right;
+    margin: 0 auto 4px;
+}
+
+#createTopicModal .create_step1 .topic_title_inp {
+    border: 1px solid rgba(138, 138, 138, 0.8);
+    border-radius: 100px;
+    background: transparent;
+    height: 45px;
+    padding: 0 17px;
+    width: 100%;
+    color: #000;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#createTopicModal .create_step1 .topic_title_inp::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.22);
+}
+
+#createTopicModal .create_step1 .topic_title_inp.error {
+    border: 1px solid red;
+}
+
+/* topic_content_inp */
+#createTopicModal .create_step1 .topic_content_inp {
+    border: 1px solid rgba(138, 138, 138, 0.8);
+    border-radius: 19px;
+    background: transparent;
+    min-height: 245px;
+    padding: 17px;
+    width: 100%;
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+#createTopicModal .create_step1 .topic_content_inp::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.22);
+}
+
+#createTopicModal .create_step1 .topic_content_inp:focus-visible {
+    border: 1px solid rgba(138, 138, 138, 0.8);
+}
+
+#createTopicModal .create_step1 .topic_content_inp.error {
+    border: 1px solid red;
+}
+
+/* tag_box */
+#createTopicModal .create_step1 .tag_box {
+    border: 1px solid rgba(138, 138, 138, 0.8);
+    border-radius: 100px;
+    background: transparent;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 45px;
+    margin: 0 auto 36px;
+}
+
+#createTopicModal .create_step1 .tag_box .tag_box_title {
+    color: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+    text-align-last: right;
+    margin-left: 16px;
+}
+
+/* rules_box */
+#createTopicModal .create_step1 .rules_box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto 80px;
+    position: relative;
+}
+
+#createTopicModal .create_step1 .rules_box .rules_inp {
+    background: #d9d9d9;
+    border-radius: 2px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+#createTopicModal .create_step1 .rules_box .rules_inp.error {
+    border: 1px solid red;
+}
+
+label#rules-error {
+    /* width: 100%; */
+    /* display: block; */
+    position: absolute;
+    bottom: -20px;
+}
+
+#createTopicModal .create_step1 .rules_box .rules_title {
+    font-weight: 400;
+    font-size: 18px;
+    text-align: right;
+    text-align-last: right;
+    margin: 0;
+    color: #000;
+}
+
+#createTopicModal .create_step1 .rules_box .rules_title span {
+    color: #0095da;
+}
+
+#createTopicModal .create_step1 .createTopic_form {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#createTopicModal .create_step1 .createTopic_form .form-group {
+    margin: 0 auto 20px;
+}
+
+#createTopicModal .create_step1 .btn_group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#createTopicModal .create_step1 .btn_group .callToAction {
+    border-radius: 118px;
+    margin-left: 16px;
+    border: none;
+}
+
+#createTopicModal .create_step1 .btn_group .callToAction2 {
+    border: 1px solid #0d3f6d;
+    border-radius: 168px;
+}
+
+/* =========== .create_step2 =========== */
+#createTopicModal .create_step2 {
+    display: none;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#createTopicModal .create_step2 .topic_submit {
+    margin: 0 auto 30px;
+}
+
+#createTopicModal .create_step2 .caption {
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 48px;
+    margin: 0 auto 8px;
+    text-align: center;
+    text-align-last: center;
+}
+
+#createTopicModal .create_step2 .all_myTopic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0095da;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 48px;
+    margin: 0 auto;
+    text-align: center;
+    text-align-last: center;
+}
+
+#createTopicModal .create_step2 .all_myTopic img {
+    filter: invert(54%) sepia(70%) saturate(6824%) hue-rotate(177deg) brightness(103%) contrast(101%);
+}
+
+/*================================ dashboard page styles ================================*/
+.dashboard_top {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard_user {
+    background: #ffffff;
+    box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard_user .user_properties {
+    min-width: auto;
+}
+
+#topic_type_tab {
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+#topic_type_tab .nav-item {
+    width: 32%;
+}
+
+#topic_type_tab .nav-link {
+    background: #ffffff;
+    box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    border: none;
+    height: 125px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#topic_type_tab .nav-link.active {
+    background: #d6eef9;
+}
+
+#topic_type_tab .topic_num {
+    color: #000000;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    text-align-last: center;
+    margin: 0 auto;
+    line-height: 1;
+}
+
+#topic_type_tab .topic_txt {
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    text-align-last: center;
+    margin: 0 auto;
+}
+
+.dashboard_list_box {
+    background: #ffffff;
+    box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.dashboard_list {
+    flex-direction: column !important;
+}
+
+/*================= dashboard page styles =================*/
+#dashboard {
+    margin: 80px 0;
+}
+
+#dashboardList_tab {
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 0px 24px -2px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 36px 44px 18px 0;
+}
+
+#dashboardList_tab .nav-item {
+    margin-bottom: 16px;
+}
+
+#dashboardList_tab .nav-link {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+#dashboardList_tab .nav-link.active .dashboard_item_txt {
+    color: #0d3f6d;
+}
+
+#dashboardList_tab .dashboard_item_txt {
+    color: rgba(0, 0, 0, 0.57);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    text-align-last: center;
+}
+
+#dashboardList_tab .dashboard_item_img {
+    margin-left: 10px;
+}
+
+.exit_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.exit_item .dashboard_exit {
+    font-weight: 400;
+    font-size: 20px;
+    color: #d90429;
+    text-align: right;
+    margin: 0;
+}
+
+.exit_item .dashboard_exit_img {
+    margin-left: 10px;
+}
+
+#dashboard_content .tab-pane {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 8%);
+    border-radius: 8px;
+}
+
+#myTopic_item {
+    padding: 24px;
+}
+
+#myTopic_item .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.tab_pane_title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    text-align-last: right;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #0095da;
+    width: fit-content;
+}
+
+.show_sort_topic {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.sort_topic_title {
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: right;
+    margin: 0;
+}
+
+.topic_status {
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    padding: 1px 15px;
+    border-radius: 110px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.topic_status.pend {
+    background: #ade8f4;
+}
+
+.topic_status.publish {
+    background: #b7e4c7;
+}
+
+.topic_status.reject {
+    background: #f49097;
+}
+
+.sort_topic_item {
+    margin-bottom: 35px;
+}
+
+.sort_topic_date {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#dashboard_item.tab-pane {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    height: fit-content;
+}
+
+.tab_item_box_box {
+    margin-bottom: 18px;
+}
+
+.item_title {
+    font-weight: 500;
+    font-size: 18px;
+    text-align: right;
+    text-align-last: right;
+    margin: 0 0 5px;
+}
+
+.item_caption {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+    text-align-last: right;
+}
+
+.tab_content {
+    padding: 32px;
+}
+
+#savedTopic_item {
+    padding: 30px;
 }

@@ -145,12 +145,13 @@
                                 ورود از طریق
                                 <a class="login_with_code"> ارسال کد </a>
                             </p>
-                            <form id="subscribers">
+                            <form id="subscribers" action="{{route('login')}}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <input
                                         type="tel"
-                                        name="phone"
-                                        id="phone"
+                                        name="mobile"
+                                        id="mobile"
                                         class="form-control"
                                         placeholder="شماره تلفن همراه"
                                     />

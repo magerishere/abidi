@@ -29,6 +29,5 @@
         <div class="swiper-button-next"></div>
     </div>
 
-    <!-- ============ register-login-Modal ============ -->
-    @include('front.home.partials._register-login-modal')
+
 @endsection

@@ -14,17 +14,28 @@
                 </a>
             </ul>
             <div class="btn_group">
-                <a
-                    href="#register"
-                    target="_blank"
-                    class="callToAction"
-                    data-bs-toggle="modal"
-                    data-bs-target="#registerModal"
-                >ورود/ ثبت نام</a
-                >
-                <a href="#" target="_blank" class="callToAction2">
-                    <i class="fas fa-plus"></i>ایجاد تاپیک جدید
-                </a>
+                @guest
+                    <a
+                        href="#register"
+                        target="_blank"
+                        class="callToAction"
+                        data-bs-toggle="modal"
+                        data-bs-target="#registerModal"
+                    >ورود/ ثبت نام</a
+                    >
+                @endguest
+                @auth
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="callToAction2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#createTopicModal"
+                    >
+                        <i class="fas fa-plus"></i>ایجاد تاپیک جدید
+                    </a>
+                @endauth
+
                 <a href="#" class="bell_icon"
                 ><i class="far fa-bell"></i> <span class="bell_number">5</span></a
                 >

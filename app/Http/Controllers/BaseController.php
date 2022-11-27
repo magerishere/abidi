@@ -19,6 +19,7 @@ class BaseController extends Controller
         if (!isset($data['user_id'])) {
             $data['user_id'] = auth()->id();
         }
+
         return $model::create($data);
     }
 
@@ -95,5 +96,13 @@ class BaseController extends Controller
         return redirect()->back()->with($withData);
     }
 
+    public function base_response_json(array $withData = [])
+    {
+        if (!isset($withData['session_type'])) {
+            $withData['session_type'] = SessionTypeEnums::SUCCESS;
+        }
+        return response()->json($withData);
+
+    }
 
 }

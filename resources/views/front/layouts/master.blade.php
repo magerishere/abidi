@@ -19,6 +19,10 @@
 <main>
     @yield('content')
 </main>
+<!-- ============ createTopicModal ============ -->
+@include('front.layouts.partials._create-topic-modal')
+<!-- ============ register-login-Modal ============ -->
+@include('front.layouts.partials._register-login-modal')
 <!-- footer -->
 @include('front.layouts.footer')
 <!-- Design by Harmony Agency -->

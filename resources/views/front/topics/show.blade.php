@@ -24,7 +24,7 @@
                         <div class="left">
                             <p class="date">
                                 ارسال شده در
-                                <span> 18 اردیبهشت</span>
+                                <span> {{$topic->readable_created_at}}</span>
                             </p>
                         </div>
                     </div>

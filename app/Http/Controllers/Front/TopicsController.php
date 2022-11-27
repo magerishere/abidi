@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Enums\TopicStatusEnums;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Front\TopicStoreRequest;
 use App\Models\Topic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TopicsController extends FrontController
 {
@@ -34,9 +37,16 @@ class TopicsController extends FrontController
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TopicStoreRequest $request)
     {
-        //
+        Log::alert($request->all());
+        $request['status'] = TopicStatusEnums::PENDING;
+        $topic = $this->base_create(Topic::class, $request->all());
+        $this->base_update_or_create($topic, 'tag', ['content' => $request->get('tag')]);
+
+        return $this->base_response_json([
+            'session_message' => __('messages.success_create', ['title' => $topic->title])
+        ]);
     }
 
     /**

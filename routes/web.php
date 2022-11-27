@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'loginAttempt'])->name('login.attempt');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::resource('topics', TopicsController::class);
+});
 
 /*
 |--------------------------------------------------------------------------

@@ -1,11 +1,12 @@
 $(document).ready(function () {
+    // subscribers validate
     $("#subscribers").validate({
         // initialize the plugin
         rules: {
             name: {
                 required: true,
             },
-            phone: {
+            mobile: {
                 required: true,
                 minlength: 11,
                 maxlength: 11,
@@ -18,7 +19,7 @@ $(document).ready(function () {
             name: {
                 required: "لطفا نام خود را وارد کنید",
             },
-            phone: {
+            mobile: {
                 required: "لطفا شماره تماس خود را وارد کنید",
                 minlength: "شماره تماس وارد شده معتبر نیست",
                 maxlength: "شماره تماس وارد شده معتبر نیست",
@@ -29,10 +30,10 @@ $(document).ready(function () {
         },
         submitHandler: function () {
             form_otp();
-            timerSendSms();
         },
     });
 
+    // otp validate
     $("#subscribers_confirm").validate({
         // initialize the plugin
         rules: {
@@ -54,6 +55,7 @@ $(document).ready(function () {
         },
     });
 
+    // login validate
     $("#login").validate({
         // initialize the plugin
         rules: {
@@ -71,8 +73,105 @@ $(document).ready(function () {
             },
         },
         submitHandler: function () {
-            form_otp();
-            timerSendSms();
+            form_login();
+        },
+    });
+
+    // loginWithPassword validate
+    $("#loginWithPassword").validate({
+        // initialize the plugin
+        rules: {
+            phone: {
+                required: true,
+                minlength: 11,
+                maxlength: 11,
+            },
+            password: {
+                required: true,
+            },
+        },
+        messages: {
+            phone: {
+                required: "لطفا شماره تماس خود را وارد کنید",
+                minlength: "شماره تماس وارد شده معتبر نیست",
+                maxlength: "شماره تماس وارد شده معتبر نیست",
+            },
+            password: {
+                required: "لطفا پسورد خود را وارد کنید",
+            },
+        },
+        submitHandler: function () {
+            loginWithPassword();
+        },
+    });
+
+    // email_link validate
+    $("#email_link").validate({
+        // initialize the plugin
+        rules: {
+            email: {
+                required: true,
+            },
+        },
+        messages: {
+            email: {
+                required: "لطفا ایمیل خود را وارد کنید",
+            },
+        },
+        submitHandler: function () {
+            form_email();
+        },
+    });
+
+    // phone_link validate
+    $("#phone_link").validate({
+        // initialize the plugin
+        rules: {
+            required: true,
+            minlength: 11,
+            maxlength: 11,
+        },
+        messages: {
+            phone: {
+                required: "لطفا شماره تماس خود را وارد کنید",
+                minlength: "شماره تماس وارد شده معتبر نیست",
+                maxlength: "شماره تماس وارد شده معتبر نیست",
+            },
+        },
+        submitHandler: function () {
+            form_sms();
+        },
+    });
+
+    // createTopic validate
+    $("#createTopic").validate({
+        // initialize the plugin
+        rules: {
+            title: {
+                required: true,
+            },
+            content: {
+                required: true,
+                maxlength: 1000,
+            },
+            rules: {
+                required: true,
+            },
+        },
+        messages: {
+            title: {
+                required: "لطفا عنوان تاپیک را وارد کنید",
+            },
+            content: {
+                required: "لطفا متن تاپیک خود را وارد کنید",
+                maxlength: "متن تاپیک شما بیش از 1000 کاراکتر است  ",
+            },
+            rules: {
+                required: "قبول قوانین سایت الزامی است",
+            },
+        },
+        submitHandler: function () {
+            createTopic();
         },
     });
 });
@@ -239,56 +338,67 @@ var swiper = new Swiper(".mySwiper", {
 
 /*===================================== form_otp =====================================*/
 function form_otp() {
-    var formDataOtp = {
-        name: persianToEnglish($("#subscribers #name").val()),
-        phone: persianToEnglish($("#subscribers #phone").val()),
-        password: persianToEnglish($("#subscribers #password").val()),
-    };
-    $.ajax({
-        type: "POST",
-        url: "panel/otp.php",
-        data: formDataOtp,
-        dataType: "json",
-        encode: true,
-    }).done(function (data) {
-        if (data["success"] == true) {
-            $(".errorValidateOtp").hide();
-            $("#registerModal .step1").hide();
-            $("#registerModal .step2").fadeIn();
-            $(".enteredPhone").html($("#subscribers #phone").val());
-        } else {
-            $(".errorValidateOtp").show();
-            $(".errorValidateOtp").html(data["message"]);
-        }
-    });
+    $("#registerModal .step1").hide();
+    $("#registerModal .step2").fadeIn();
 }
 
 /*===================================== form_submit =====================================*/
 function form_submit() {
-    var formDataSubscriber = {
-        confirm: persianToEnglish($("#subscribers_confirm #confirm").val()),
-        utm_source: sessionStorage.getItem("utm_source"),
-        utm_campaign: sessionStorage.getItem("utm_medium"),
-        utm_medium: sessionStorage.getItem("utm_campaign"),
-        utm_term: sessionStorage.getItem("utm_term"),
-        utm_content: sessionStorage.getItem("utm_content"),
-        referrer: document.referrer,
-    };
+    $("#registerModal .step2").hide();
+    $("#registerModal .step3").fadeIn();
+}
+
+/*===================================== form_login =====================================*/
+function form_login() {
+    $("#registerModal .step3").hide();
+    $("#registerModal .step4").fadeIn();
+}
+
+/*===================================== form_email =====================================*/
+function form_email() {
+    $("#registerModal .step6").hide();
+    $("#registerModal .step9").fadeIn();
+}
+
+/*===================================== form_sms =====================================*/
+function form_sms() {
+    $("#registerModal .step7").hide();
+    $("#registerModal .step8").fadeIn();
+}
+
+/*===================================== loginWithPassword =====================================*/
+function loginWithPassword() {
+    $("#registerModal .step4").hide();
+    $("#registerModal .step5").fadeIn();
+}
+
+/*===================================== createTopic =====================================*/
+function createTopic() {
+    const createTopicForm = $('#createTopic');
+    const formData = createTopicForm.serializeArray();
+
+    const tagInputs = $('.topic_tags');
+    // join all values tag input with , -> ['one','two'] -> 'one,two'
+    const tagInputValues = tagInputs.map(function () {
+        return this.value;
+    }).get().join(',');
+    // push tag values into form data
+    formData.push({name: 'tag', value: tagInputValues});
+
+    console.log({formData});
     $.ajax({
-        type: "POST",
-        url: "panel/process.php",
-        data: formDataSubscriber,
-        dataType: "json",
-        encode: true,
-    }).done(function (data) {
-        if (data["success"] == true) {
-            $(".errorValidate").hide();
-            $("#registerModal").modal("toggle");
-        } else {
-            $(".errorValidate").show();
-            $(".errorValidate").html(data["message"]);
+        type: createTopicForm.prop('method'),
+        url: createTopicForm.prop('action'),
+        data: formData,
+        success: (res) => {
+            console.log({res})
+            $("#createTopicModal .create_step1").hide();
+            $("#createTopicModal .create_step2").fadeIn();
+        }, error: (err) => {
+            console.log({err})
         }
-    });
+    })
+
 }
 
 /*===================================== timerSendSms =====================================*/
@@ -320,7 +430,7 @@ function timerSendSms(el) {
 }
 
 /*===================================== Send Sms Again =====================================*/
-$("#subscribers_confirm #sendAgain").click(function () {
+$("#sendAgain").click(function () {
     form_otp();
     timerSendSms("#registerModal");
     $("#subscribers_confirm #confirm").val("");
@@ -330,6 +440,11 @@ $("#subscribers_confirm #sendAgain").click(function () {
 $("#editMobile").click(function () {
     $("#registerModal .step2").hide();
     $("#registerModal .step1").fadeIn();
+});
+
+/*===================================== close topics tag =====================================*/
+$(".close_tag").click(function () {
+    $(this).parent().fadeOut();
 });
 
 /*===================================== login_btn =====================================*/
@@ -350,7 +465,7 @@ $(".login_with_code").click(function () {
     $("#registerModal .step4").fadeIn();
 });
 
-/*===================================== login_with_code =====================================*/
+/*===================================== problem to get code =====================================*/
 $(".problem_code").click(function () {
     $("#registerModal .step3").hide();
     $("#registerModal .step4").fadeIn();
@@ -361,8 +476,33 @@ $(".send_to_email").click(function () {
     $("#registerModal .step6").fadeIn();
     $("#registerModal .step7").hide();
 });
+
 /*===================================== send link with email =====================================*/
 $(".send_to_phone").click(function () {
     $("#registerModal .step7").fadeIn();
     $("#registerModal .step6").hide();
+});
+
+/*===================================== forget_password =====================================*/
+$(".forget_password").click(function () {
+    $("#registerModal .step4").hide();
+    $("#registerModal .step5").fadeIn();
+});
+
+/*===================================== login_with_code =====================================*/
+$(".login_with_code").click(function () {
+    $("#registerModal .step4").hide();
+    $("#registerModal .step2").fadeIn();
+});
+
+/*===================================== send new password with email =====================================*/
+$(".send_with_email").click(function () {
+    $("#registerModal .step5").hide();
+    $("#registerModal .step6").fadeIn();
+});
+
+/*===================================== send new password with sms =====================================*/
+$(".send_with_sms").click(function () {
+    $("#registerModal .step5").hide();
+    $("#registerModal .step7").fadeIn();
 });
