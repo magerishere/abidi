@@ -24,7 +24,7 @@ class AuthController extends FrontController
             }
 
             $request->session()->regenerate();
-            return redirect()->intended(route('home'));
+            return redirect()->intended(route('dashboard'));
         }
 
         return $this->base_redirect_back([

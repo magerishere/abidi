@@ -37,7 +37,7 @@
                             <div class="col-4">
                                 <div class="visit_box">
                                     <img src="{{asset('front/assets/images/answerNumber.png')}}" alt=""/>
-                                    <span class="answer_number">200</span>
+                                    <span class="answer_number">{{$topic->doctorReplies()->count()}}</span>
                                 </div>
                                 <span class="statistics_txt">پاسخ پزشک</span>
                             </div>
@@ -48,7 +48,7 @@
             @endforeach
 
         </div>
-        <a href="#" class="btn callToAction2">
+        <a href="{{route('dashboard')}}" class="btn callToAction2">
             دیدن همه
             <i class="fas fa-angle-left"></i>
         </a>

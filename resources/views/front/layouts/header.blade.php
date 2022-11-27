@@ -1,5 +1,6 @@
 <!-- header -->
-<header>
+{{--In home page, header must be absolute position, otherwise position is realative--}}
+<header style="position: {{\Illuminate\Support\Facades\Route::is('home') ? 'absolute' : 'relative'}}">
     <div class="container">
         <div class="content">
             <ul class="header_items">
@@ -33,6 +34,15 @@
                         data-bs-target="#createTopicModal"
                     >
                         <i class="fas fa-plus"></i>ایجاد تاپیک جدید
+                    </a>
+                    <a
+                        href="{{route('dashboard')}}"
+                        target="_blank"
+                        class="callToAction"
+                        data-bs-toggle="modal"
+                        data-bs-target="#createTopicModal"
+                    >
+                        <i class="fas fa-plus"></i>داشبورد
                     </a>
                 @endauth
 

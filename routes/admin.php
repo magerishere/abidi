@@ -2,6 +2,7 @@
 
 use App\Enums\UserRoleEnums;
 use App\Http\Controllers\Back\AuthController;
+use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\DoctorsController;
 use App\Http\Controllers\Back\TopicsController;
 use App\Http\Controllers\Back\UsersController;
@@ -25,9 +26,7 @@ Route::middleware('auth')->group(function() {
     | Dashboard Routes
     |--------------------------------------------------------------------------
     */
-    Route::get('/', function () {
-        return view('back.dashboard');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     /*
     |--------------------------------------------------------------------------
     | Topics Routes

@@ -57,7 +57,10 @@ class TopicsController extends FrontController
      */
     public function show(Topic $topic)
     {
-        $topicTags = explode(',', $topic->tag->content);
+        $topicTags = [];
+        if ($topic->tag) {
+            $topicTags = explode(',', $topic->tag->content);
+        }
         return view('front.topics.show', compact('topic', 'topicTags'));
     }
 

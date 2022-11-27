@@ -9,12 +9,22 @@ use Illuminate\Support\Facades\Auth;
 
 class BaseController extends Controller
 {
-    public function base_all_order_by_desc($model,$orderBy = 'created_at')
+    public function base_all_order_by_desc($model, $orderBy = 'created_at')
     {
         return $model::orderByDesc($orderBy)->get();
     }
 
-    public function base_create($model,array $data)
+    public function base_all_own_order_by_desc($model, $orderBy = 'created_at')
+    {
+        return $model::where('user_id', Auth::id())->orderByDesc($orderBy)->get();
+    }
+
+    public function base_where_with_limit($model, array $conditions = [], $limit = 10)
+    {
+        return $model::where($conditions)->limit($limit)->get();
+    }
+
+    public function base_create($model, array $data)
     {
         if (!isset($data['user_id'])) {
             $data['user_id'] = auth()->id();

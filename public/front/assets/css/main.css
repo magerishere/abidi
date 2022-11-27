@@ -96,7 +96,6 @@ input[type="number"] {
 /*================================ header ================================*/
 header {
     background: transparent;
-    position: absolute;
     width: 100%;
 }
 header .content {
