@@ -4,6 +4,9 @@
     <div class="container">
         <div class="content">
             <ul class="header_items">
+                <a href="{{route('home')}}">
+                    <li>صفحه اصلی</li>
+                </a>
                 <a href="#">
                     <li>پزشکان عبیدی</li>
                 </a>
@@ -39,10 +42,8 @@
                         href="{{route('dashboard')}}"
                         target="_blank"
                         class="callToAction"
-                        data-bs-toggle="modal"
-                        data-bs-target="#createTopicModal"
                     >
-                        <i class="fas fa-plus"></i>داشبورد
+                        داشبورد
                     </a>
                 @endauth
 

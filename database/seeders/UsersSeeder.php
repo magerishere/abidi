@@ -116,7 +116,6 @@ class UsersSeeder extends Seeder
 
         foreach (Topic::all() as $topic) {
             TopicReply::factory(5)->create([
-                'user_id' => $topic->user_id,
                 'topic_id' => $topic->id,
             ]);
         }
