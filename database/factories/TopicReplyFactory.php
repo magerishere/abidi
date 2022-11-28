@@ -18,7 +18,7 @@ class TopicReplyFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->randomNumber(1, 4),
+            'user_id' => $this->faker->randomNumber(2, 10),
 //            'topic_id',
             'status' => $this->faker->randomElement(TopicStatusEnums::asArray()),
             'title' => $this->faker->title,
