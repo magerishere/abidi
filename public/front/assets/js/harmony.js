@@ -29,7 +29,7 @@ $(document).ready(function () {
             },
         },
         submitHandler: function () {
-            form_otp();
+            form_otp_send();
         },
     });
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
             },
         },
         submitHandler: function () {
-            form_submit();
+            form_otp_register();
         },
     });
 
@@ -217,11 +217,24 @@ var persianNumbers = [
         /۸/g,
         /۹/g,
     ],
-    arabicNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
+    arabicNumbers = [
+        /٠/g,
+        /١/g,
+        /٢/g,
+        /٣/g,
+        /٤/g,
+        /٥/g,
+        /٦/g,
+        /٧/g,
+        /٨/g,
+        /٩/g,
+    ],
     persianToEnglish = function (str) {
         if (typeof str === "string") {
             for (var i = 0; i < 10; i++) {
-                str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+                str = str
+                    .replace(persianNumbers[i], i)
+                    .replace(arabicNumbers[i], i);
             }
         }
         return str;
@@ -251,17 +264,17 @@ jQuery(function ($) {
 });
 
 /*===================================== swiper =====================================*/
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
+var swiper = new Swiper(".lastVideosSwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
     centeredSlides: true,
-    grabCursor: true,
+    // grabCursor: true,
     loop: true,
     // effect: "fade",
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -273,20 +286,27 @@ var swiper = new Swiper(".mySwiper", {
     breakpoints: {
         // device's width >= 640
         640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
         },
         // device's width >= 768
         768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            slidesPerView: 1,
+            spaceBetween: 20,
         },
         // device's width >= 1024
         1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
+            slidesPerView: 2.5,
+            spaceBetween: 20,
         },
     },
+});
+
+$(".lastVideosSwiper .swiper-slide").click(function () {
+    $(this).children("video").attr("controls", "controls");
+    $(this).children("video").trigger("play");
+    $(this).children(".video_info").hide();
+    $(this).children(".playe_icone").hide();
 });
 
 // Click event for any anchor tag that's href starts with #
@@ -337,17 +357,62 @@ var swiper = new Swiper(".mySwiper", {
 // }
 
 /*===================================== form_otp =====================================*/
-function form_otp() {
-    $("#registerModal .step1").hide();
-    $("#registerModal .step2").fadeIn();
+function form_otp_send() {
+
+    const otpForm = $("#subscribers");
+    const formData = otpForm.serializeArray();
+
+    console.log({ formData });
+    $.ajax({
+        type: otpForm.prop("method"),
+        url: otpForm.prop("action"),
+        data: formData,
+        success: (res) => {
+            console.log({ res });
+            $("#registerModal .step1").hide();
+            $("#registerModal .step2").fadeIn();
+
+        },
+        error: (err) => {
+            console.log({ err });
+        },
+    });
+
+
 }
 
+
+function form_otp_register() {
+
+    const registerForm = $("#subscribers");
+    const otpForm = $("#subscribers_confirm");
+    const formData = registerForm.serializeArray();
+    const otpInputValues  = $("#subscribers_confirm #otp").val();
+      // push tag values into form data
+    formData.push({ name: "otp", value: otpInputValues });
+
+    console.log({ formData });
+    $.ajax({
+        type: otpForm.prop("method"),
+        url: otpForm.prop("action"),
+        data: formData,
+        success: (res) => {
+            console.log({ res });
+        },
+        error: (err) => {
+            console.log({ err });
+        },
+    });
+}
 /*===================================== form_submit =====================================*/
 function form_submit() {
     $("#registerModal .step2").hide();
     $("#registerModal .step3").fadeIn();
 }
-
+function form_otp_submit() {
+    $("#registerModal .step2").hide();
+    $("#registerModal .step3").fadeIn();
+}
 /*===================================== form_login =====================================*/
 function form_login() {
     $("#registerModal .step3").hide();
@@ -374,31 +439,34 @@ function loginWithPassword() {
 
 /*===================================== createTopic =====================================*/
 function createTopic() {
-    const createTopicForm = $('#createTopic');
+    const createTopicForm = $("#createTopic");
     const formData = createTopicForm.serializeArray();
 
-    const tagInputs = $('.topic_tags');
+    const tagInputs = $(".topic_tags");
     // join all values tag input with , -> ['one','two'] -> 'one,two'
-    const tagInputValues = tagInputs.map(function () {
-        return this.value;
-    }).get().join(',');
+    const tagInputValues = tagInputs
+        .map(function () {
+            return this.value;
+        })
+        .get()
+        .join(",");
     // push tag values into form data
-    formData.push({name: 'tag', value: tagInputValues});
+    formData.push({ name: "tag", value: tagInputValues });
 
-    console.log({formData});
+    console.log({ formData });
     $.ajax({
-        type: createTopicForm.prop('method'),
-        url: createTopicForm.prop('action'),
+        type: createTopicForm.prop("method"),
+        url: createTopicForm.prop("action"),
         data: formData,
         success: (res) => {
-            console.log({res})
+            console.log({ res });
             $("#createTopicModal .create_step1").hide();
             $("#createTopicModal .create_step2").fadeIn();
-        }, error: (err) => {
-            console.log({err})
-        }
-    })
-
+        },
+        error: (err) => {
+            console.log({ err });
+        },
+    });
 }
 
 /*===================================== timerSendSms =====================================*/
@@ -431,7 +499,7 @@ function timerSendSms(el) {
 
 /*===================================== Send Sms Again =====================================*/
 $("#sendAgain").click(function () {
-    form_otp();
+    form_otp_register();
     timerSendSms("#registerModal");
     $("#subscribers_confirm #confirm").val("");
 });
@@ -467,7 +535,7 @@ $(".login_with_code").click(function () {
 
 /*===================================== problem to get code =====================================*/
 $(".problem_code").click(function () {
-    $("#registerModal .step3").hide();
+    $("#registerModal .step2").hide();
     $("#registerModal .step4").fadeIn();
 });
 
@@ -505,4 +573,14 @@ $(".send_with_email").click(function () {
 $(".send_with_sms").click(function () {
     $("#registerModal .step5").hide();
     $("#registerModal .step7").fadeIn();
+});
+
+/*===================================== delete_topic =====================================*/
+$(".delete_topic").click(function () {
+    $(this).parent(".tab_item_box").fadeOut();
+});
+
+/*===================================== btn_exit =====================================*/
+$(".btn_exit button").click(function () {
+    $("#deleteTopicModal").modal("hide");
 });

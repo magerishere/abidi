@@ -23,7 +23,8 @@
                                 قبلا ثبت نام کرده اید؟
                                 <a class="login_btn">ورود</a>
                             </p>
-                            <form id="subscribers">
+                            <form id="subscribers" action="{{route('generate')}}" method="POST">
+                               @csrf
                                 <div class="form-group">
                                     <input
                                         type="text"
@@ -36,8 +37,8 @@
                                 <div class="form-group">
                                     <input
                                         type="tel"
-                                        name="phone"
-                                        id="phone"
+                                        name="mobile"
+                                        id="mobile"
                                         class="form-control"
                                         placeholder="شماره تلفن همراه"
                                     />
@@ -74,7 +75,8 @@
                                 <span class="enteredPhone"></span>
                                 را وارد کنید
                             </p>
-                            <form action="" id="subscribers_confirm">
+                            <form  id="subscribers_confirm" action="{{route('register')}}" method="POST">
+                                @csrf
                                 <p class="false_number">
                                     شماره اشتباه است؟
                                     <span id="editMobile">اصلاح شماره تلفن</span>
@@ -82,8 +84,8 @@
                                 <div class="form-group confirm_box">
                                     <input
                                         type="tel"
-                                        name="confirm"
-                                        id="confirm"
+                                        name="otp"
+                                        id="otp"
                                         class="input_code"
                                         autofocus
                                         autocomplete="off"
@@ -147,15 +149,7 @@
                             </p>
                             <form id="subscribers" action="{{route('login')}}" method="POST">
                                 @csrf
-                                <div class="form-group">
-                                    <input
-                                        type="tel"
-                                        name="mobile"
-                                        id="mobile"
-                                        class="form-control"
-                                        placeholder="شماره تلفن همراه"
-                                    />
-                                </div>
+     
                                 <div class="form-group">
                                     <input
                                         type="password"

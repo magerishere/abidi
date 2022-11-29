@@ -36,8 +36,9 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                    <h2 class="footer_title">دسترسی</h2>
-                    <hr class="border_footer"/>
+                    <h2 class="footer_title desktop">دسترسی</h2>
+                    <hr class="border_footer desktop"/>
+                    <img src="{{asset('front/assets/images/logo.png')}}" alt="" class="mobile logoFooter">
                     <ul class="access">
                         <li>
                             <a href="#">بلاگ</a>
@@ -59,8 +60,8 @@
                         alt=""
                         class="logo_footer desktop"
                     />
-                    <h2 class="footer_title">مارا دنبال کنید</h2>
-                    <hr class="border_footer"/>
+                    <h2 class="footer_title desktop">مارا دنبال کنید</h2>
+                    <hr class="border_footer desktop"/>
                     <div class="social-icon">
                         <a href="" target="_blank" rel="noindex,nofollow"
                         ><img src="{{asset('front/assets/images/aparat.png')}}" alt=""
@@ -83,7 +84,7 @@
                 title="آژانس دیجیتال مارکتینگ 360 درجه هارمونی"
                 rel="noindex,nofollow"
             >
-            <span class="hover-company">
+            <span class="hover-company desktop ">
               <img src="{{asset('front/assets/images/harmony-name.png')}}" loading="lazy" alt=""/>
             </span>
                 <img
@@ -92,7 +93,7 @@
                     loading="lazy"
                     alt=""
                 />
-                <span class="hover-company">Design by</span>
+                <span class="hover-company desktop">Design by</span>
             </a>
         </div>
     </div>

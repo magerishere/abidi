@@ -87,3 +87,34 @@ if (!function_exists('getDoctorUsers')) {
         return User::role(UserRoleEnums::DOCTOR)->get();
     }
 }
+
+// SMS Helper
+
+if (!function_exists('kavenegarSMSOTP')) {
+
+    function kavenegarSMSOTP($mobile,$token){
+
+        $apiKey = '34766A373652457777676B464E2F344E6B653172564559504C7A356F643744654E454B4558564B554B68633D';
+            $url = "https://api.kavenegar.com/v1/$apiKey/verify/lookup.json";
+            
+            $curl = curl_init();
+            
+            $fields = array(
+                'receptor' => $mobile,
+                'token' => $token,
+                'template' => 'abidi'
+            );
+            
+            $json_string = json_encode($fields);
+            
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, TRUE);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $fields);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true );
+            
+            $data = curl_exec($curl);
+            $result = json_decode($data);
+            return $result->return;
+    
+    }
+}

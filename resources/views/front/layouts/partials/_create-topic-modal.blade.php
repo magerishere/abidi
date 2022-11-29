@@ -1,6 +1,6 @@
 <!-- ============ createTopicModal ============ -->
 <div
-    class="modal fade"
+    class="modal fade topicModal"
     id="createTopicModal"
     aria-hidden="true"
     aria-labelledby="creatTopicLabel"
@@ -94,7 +94,7 @@
                 <!-- create_step2 -->
                 <div class="create_step2">
                     <img
-                        src="/assets/images/topic_submit_img.png"
+                        src="{{asset('front/assets/images/topic_submit_img')}}"
                         alt=""
                         class="topic_submit"
                     />
@@ -103,7 +103,8 @@
                     </p>
                     <a href="./showTopic.html" class="all_myTopic"
                     >همه تاپیک های من
-                        <img src="/assets/images/left_arrow.png" alt=""/>
+                        <img src="{{asset('front/assets/images/left_arrow.png')}}" alt=""/>
+
                     </a>
                 </div>
             </div>

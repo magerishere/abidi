@@ -44,4 +44,6 @@ class AuthController extends BackController
 
         return to_route('home');
     }
+
+
 }

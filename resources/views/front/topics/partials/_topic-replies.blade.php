@@ -68,7 +68,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -123,7 +123,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -178,7 +178,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -249,7 +249,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -304,7 +304,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -359,7 +359,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -430,7 +430,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -485,7 +485,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>
@@ -540,7 +540,7 @@
                                         href="#"
                                         class="callToAction"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#registerModal"
+                                        data-bs-target="#answerTopicModal"
                                     >
                                         پاسخ دادن
                                     </a>

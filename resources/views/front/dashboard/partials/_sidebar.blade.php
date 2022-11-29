@@ -28,7 +28,8 @@
                 aria-selected="true"
             >
                 <img
-                    src="/assets/images/dashboard_icon.png"
+
+                    src="{{asset('front/assets/images/dashboard_icon.png')}}"
                     alt=""
                     class="dashboard_item_img"
                 />
@@ -48,7 +49,8 @@
                 aria-selected="false"
             >
                 <img
-                    src="/assets/images/myTopic_icon.png"
+
+                    src="{{asset('front/assets/images/myTopic_icon.png')}}"
                     alt=""
                     class="dashboard_item_img"
                 />
@@ -68,7 +70,8 @@
                 aria-selected="false"
             >
                 <img
-                    src="/assets/images/savedTopic_icon.png"
+
+                    src="{{asset('front/assets/images/savedTopic_icon.png')}}"
                     alt=""
                     class="dashboard_item_img"
                 />
@@ -88,7 +91,7 @@
                 aria-selected="false"
             >
                 <img
-                    src="/assets/images/completeinfo_icon.png"
+                    src="{{asset('front/assets/images/completeinfo_icon.png')}}"
                     alt=""
                     class="dashboard_item_img"
                 />
@@ -108,21 +111,23 @@
                 aria-selected="false"
             >
                 <img
-                    src="/assets/images/messages_icon.png"
+
+                    src="{{asset('front/assets/images/messages_icon.png')}}"
                     alt=""
                     class="dashboard_item_img"
                 />
-                <p class="dashboard_item_txt">Message box</p>
+                <p class="dashboard_item_txt">صندوق پیام ها</p>
             </button>
         </li>
         <!-- exit_item -->
         <a href="#" class="exit_item">
             <img
-                src="/assets/images/exite_icon.png"
+                src="{{asset('front/assets/images/exit_icon.png')}}"
                 alt=""
                 class="dashboard_exit_img"
             />
-            <p class="dashboard_exit">خروج</p>
+            <p class="dashboard_exit caption" data-bs-toggle="modal"
+                      data-bs-target="#exitModal">خروج</p>
         </a>
     </ul>
 </div>

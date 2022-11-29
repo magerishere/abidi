@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Front\AuthController;
+use App\Http\Controllers\Front\AuthOtpController;
 use App\Http\Controllers\Front\DashboardController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\TopicsController;
@@ -24,7 +25,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/generate', [AuthOtpController::class, 'generate'])->name('generate');
     Route::post('/register', [AuthController::class, 'register'])->name('register');
+
 });
 
 Route::middleware('auth')->group(function () {

@@ -12,7 +12,7 @@
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
             </p>
             <div class="input_box">
-                <i class="far fa-search"></i>
+               <img src="{{asset('front/assets/images/search_icon.png')}}" alt="" class="search_icon">
                 <input
                     type="text"
                     placeholder="درباره چه چیزی سوال داری ؟"
@@ -25,11 +25,11 @@
     <img
         src="{{asset('front/assets/images/starter_img1.png')}}"
         alt=""
-        class="starter_img1"
+        class="starter_img1 desktop"
     />
     <img
         src="{{asset('front/assets/images/starter_img2.png')}}"
         alt=""
-        class="starter_img2"
+        class="starter_img2 desktop"
     />
 </section>

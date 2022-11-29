@@ -4,7 +4,14 @@
     role="tabpanel"
     aria-labelledby="published_topic_tab"
 >
-    <p class="tab_pane_title">تاپیک های منتشر شده</p>
+         <div class="tab_pane_header">
+            <p class="tab_pane_title">تاپیک های منتشر شده</p>
+            <a href="#" class="back_all_topic"
+                >بازگشت به همه تاپیک ها
+                <img src="{{asset('front/assets/images/left_arrow.png')}}" alt="" />
+            </a>
+           </div>
+    <!-- <p class="tab_pane_title">تاپیک های منتشر شده</p> -->
     <div class="published_content">
         @foreach($topics as $topic)
 

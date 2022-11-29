@@ -40,7 +40,7 @@
                             href="#"
                             class="callToAction"
                             data-bs-toggle="modal"
-                            data-bs-target="#
+                            data-bs-target="#answerTopicModal
                           "
                         >
                             پاسخ دادن
